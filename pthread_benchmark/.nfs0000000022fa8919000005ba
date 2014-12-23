@@ -1,0 +1,8 @@
+ptxas info    : Compiling entry function '_Z24bpnn_adjust_weights_cudaPfiS_iS_S_' for 'sm_20'
+ptxas info    : Function properties for _Z24bpnn_adjust_weights_cudaPfiS_iS_S_
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 22 registers, 80 bytes cmem[0]
+ptxas info    : Compiling entry function '_Z22bpnn_layerforward_CUDAPfS_S_S_ii' for 'sm_20'
+ptxas info    : Function properties for _Z22bpnn_layerforward_CUDAPfS_S_S_ii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 13 registers, 1088+0 bytes smem, 72 bytes cmem[0]

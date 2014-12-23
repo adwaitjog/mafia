@@ -1,0 +1,12 @@
+ptxas info    : Compiling entry function '_Z14modulateKernelPfS_i' for 'sm_20'
+ptxas info    : Function properties for _Z14modulateKernelPfS_i
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 14 registers, 52 bytes cmem[0], 4 bytes cmem[16]
+ptxas info    : Compiling entry function '_Z15fwtBatch2KernelPfS_i' for 'sm_20'
+ptxas info    : Function properties for _Z15fwtBatch2KernelPfS_i
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 21 registers, 52 bytes cmem[0]
+ptxas info    : Compiling entry function '_Z15fwtBatch1KernelPfS_i' for 'sm_20'
+ptxas info    : Function properties for _Z15fwtBatch1KernelPfS_i
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 14 registers, 52 bytes cmem[0]

@@ -1,0 +1,2 @@
+ptxas info    : Compiling entry function '__cuda_dummy_entry__' for 'sm_20'
+ptxas info    : Used 2 registers, 32 bytes cmem[0]

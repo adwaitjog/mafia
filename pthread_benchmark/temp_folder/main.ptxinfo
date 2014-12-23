@@ -1,0 +1,8 @@
+ptxas info    : Compiling entry function '_Z18mystreaming_kernelPii' for 'sm_20'
+ptxas info    : Function properties for _Z18mystreaming_kernelPii
+    56 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 19 registers, 4+0 bytes lmem, 44 bytes cmem[0], 24 bytes cmem[2], 52 bytes cmem[16]
+ptxas info    : Compiling entry function '_Z15myfriend_kernelPii' for 'sm_20'
+ptxas info    : Function properties for _Z15myfriend_kernelPii
+    56 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 19 registers, 4+0 bytes lmem, 44 bytes cmem[0], 24 bytes cmem[2], 52 bytes cmem[16]

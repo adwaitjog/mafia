@@ -1,0 +1,24 @@
+ptxas info    : Compiling entry function '_Z11bottom_scanId7double4EvPKT_PS1_S3_i' for 'sm_20'
+ptxas info    : Function properties for _Z11bottom_scanId7double4EvPKT_PS1_S3_i
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 28 registers, 16+0 bytes smem, 60 bytes cmem[0], 4 bytes cmem[16]
+ptxas info    : Compiling entry function '_Z17scan_single_blockIdLi256EEvPT_i' for 'sm_20'
+ptxas info    : Function properties for _Z17scan_single_blockIdLi256EEvPT_i
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 16 registers, 44 bytes cmem[0], 4 bytes cmem[16]
+ptxas info    : Compiling entry function '_Z6reduceIdLi256EEvPKT_PS0_i' for 'sm_20'
+ptxas info    : Function properties for _Z6reduceIdLi256EEvPKT_PS0_i
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 17 registers, 52 bytes cmem[0]
+ptxas info    : Compiling entry function '_Z11bottom_scanIf6float4EvPKT_PS1_S3_i' for 'sm_20'
+ptxas info    : Function properties for _Z11bottom_scanIf6float4EvPKT_PS1_S3_i
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 21 registers, 16+0 bytes smem, 60 bytes cmem[0], 4 bytes cmem[16]
+ptxas info    : Compiling entry function '_Z17scan_single_blockIfLi256EEvPT_i' for 'sm_20'
+ptxas info    : Function properties for _Z17scan_single_blockIfLi256EEvPT_i
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 12 registers, 44 bytes cmem[0], 4 bytes cmem[16]
+ptxas info    : Compiling entry function '_Z6reduceIfLi256EEvPKT_PS0_i' for 'sm_20'
+ptxas info    : Function properties for _Z6reduceIfLi256EEvPKT_PS0_i
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 12 registers, 52 bytes cmem[0]

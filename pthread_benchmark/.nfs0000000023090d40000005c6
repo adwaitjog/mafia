@@ -1,0 +1,104 @@
+ptxas info    : Compiling entry function '_Z34CalcHydroConstraintForElems_kernelidPiPdS0_' for 'sm_20'
+ptxas info    : Function properties for _Z34CalcHydroConstraintForElems_kernelidPiPdS0_
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 18 registers, 2048+0 bytes smem, 72 bytes cmem[0], 4 bytes cmem[16]
+ptxas info    : Compiling entry function '_Z36CalcCourantConstraintForElems_kernelidPiPdS0_S0_S0_' for 'sm_20'
+ptxas info    : Function properties for _Z36CalcCourantConstraintForElems_kernelidPiPdS0_S0_S0_
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 21 registers, 2048+0 bytes smem, 88 bytes cmem[0], 4 bytes cmem[16]
+ptxas info    : Compiling entry function '_Z28UpdateVolumesForElems_kernelidPdS_' for 'sm_20'
+ptxas info    : Function properties for _Z28UpdateVolumesForElems_kernelidPdS_
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 12 registers, 64 bytes cmem[0]
+ptxas info    : Compiling entry function '_Z43ApplyMaterialPropertiesForElemsPart1_kerneliddPiPdS0_' for 'sm_20'
+ptxas info    : Function properties for _Z43ApplyMaterialPropertiesForElemsPart1_kerneliddPiPdS0_
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 12 registers, 80 bytes cmem[0]
+ptxas info    : Compiling entry function '_Z27EvalEOSForElemsPart2_kerneliPiPdS0_S0_S0_S0_S0_' for 'sm_20'
+ptxas info    : Function properties for _Z27EvalEOSForElemsPart2_kerneliPiPdS0_S0_S0_S0_S0_
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 16 registers, 96 bytes cmem[0]
+ptxas info    : Compiling entry function '_Z27EvalEOSForElemsPart1_kerneliddPiPdS0_S0_S0_S0_S0_S0_S0_S0_S0_S0_S0_S0_S0_S0_S0_' for 'sm_20'
+ptxas info    : Function properties for _Z27EvalEOSForElemsPart1_kerneliddPiPdS0_S0_S0_S0_S0_S0_S0_S0_S0_S0_S0_S0_S0_S0_S0_
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 26 registers, 192 bytes cmem[0], 16 bytes cmem[16]
+ptxas info    : Compiling entry function '_Z29CalcSoundSpeedForElems_kernelPddS_S_S_S_diPiS_' for 'sm_20'
+ptxas info    : Function properties for _Z29CalcSoundSpeedForElems_kernelPddS_S_S_S_diPiS_
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 20 registers, 112 bytes cmem[0], 4 bytes cmem[16]
+ptxas info    : Compiling entry function '_Z30CalcEnergyForElemsPart4_kerneliddPdS_S_S_S_S_S_S_S_' for 'sm_20'
+ptxas info    : Function properties for _Z30CalcEnergyForElemsPart4_kerneliddPdS_S_S_S_S_S_S_S_
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 20 registers, 128 bytes cmem[0], 4 bytes cmem[16]
+ptxas info    : Compiling entry function '_Z30CalcEnergyForElemsPart3_kerneliddddPdS_S_S_S_S_S_S_S_S_S_S_' for 'sm_20'
+ptxas info    : Function properties for _Z30CalcEnergyForElemsPart3_kerneliddddPdS_S_S_S_S_S_S_S_S_S_S_
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 28 registers, 168 bytes cmem[0], 4 bytes cmem[16]
+ptxas info    : Compiling entry function '_Z30CalcEnergyForElemsPart2_kernelidddPdS_S_S_S_S_S_S_S_S_S_S_' for 'sm_20'
+ptxas info    : Function properties for _Z30CalcEnergyForElemsPart2_kernelidddPdS_S_S_S_S_S_S_S_S_S_S_
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 28 registers, 160 bytes cmem[0], 20 bytes cmem[16]
+ptxas info    : Compiling entry function '_Z30CalcEnergyForElemsPart1_kernelidPdS_S_S_S_S_' for 'sm_20'
+ptxas info    : Function properties for _Z30CalcEnergyForElemsPart1_kernelidPdS_S_S_S_S_
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 22 registers, 96 bytes cmem[0]
+ptxas info    : Compiling entry function '_Z27CalcPressureForElems_kernelPdS_S_S_S_S_dddid' for 'sm_20'
+ptxas info    : Function properties for _Z27CalcPressureForElems_kernelPdS_S_S_S_S_dddid
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 20 registers, 120 bytes cmem[0]
+ptxas info    : Compiling entry function '_Z35CalcMonotonicQRegionForElems_kerneldddddiPiS_S_S_S_S_S_S_PdS0_S0_S0_S0_S0_S0_S0_S0_S0_S0_S0_' for 'sm_20'
+ptxas info    : Function properties for _Z35CalcMonotonicQRegionForElems_kerneldddddiPiS_S_S_S_S_S_S_PdS0_S0_S0_S0_S0_S0_S0_S0_S0_S0_S0_
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 33 registers, 240 bytes cmem[0], 20 bytes cmem[16]
+ptxas info    : Compiling entry function '_Z38CalcMonotonicQGradientsForElems_kerneliPiPdS0_S0_S0_S0_S0_S0_S0_S0_S0_S0_S0_S0_S0_' for 'sm_20'
+ptxas info    : Function properties for _Z38CalcMonotonicQGradientsForElems_kerneliPiPdS0_S0_S0_S0_S0_S0_S0_S0_S0_S0_S0_S0_S0_
+    560 bytes stack frame, 604 bytes spill stores, 828 bytes spill loads
+ptxas info    : Used 63 registers, 160 bytes cmem[0], 20 bytes cmem[16]
+ptxas info    : Compiling entry function '_Z32CalcLagrangeElementsPart2_kerneliPdS_S_S_' for 'sm_20'
+ptxas info    : Function properties for _Z32CalcLagrangeElementsPart2_kerneliPdS_S_S_
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 22 registers, 72 bytes cmem[0], 4 bytes cmem[16]
+ptxas info    : Compiling entry function '_Z29CalcKinematicsForElems_kernelidPiPdS0_S0_S0_S0_S0_S0_S0_S0_S0_S0_S0_S0_S0_' for 'sm_20'
+ptxas info    : Function properties for _Z29CalcKinematicsForElems_kernelidPiPdS0_S0_S0_S0_S0_S0_S0_S0_S0_S0_S0_S0_S0_
+    400 bytes stack frame, 608 bytes spill stores, 760 bytes spill loads
+ptxas info    : Used 63 registers, 168 bytes cmem[0], 20 bytes cmem[16]
+ptxas info    : Compiling entry function '_Z27CalcPositionForNodes_kernelidPdS_S_S_S_S_' for 'sm_20'
+ptxas info    : Function properties for _Z27CalcPositionForNodes_kernelidPdS_S_S_S_S_
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 20 registers, 96 bytes cmem[0]
+ptxas info    : Compiling entry function '_Z27CalcVelocityForNodes_kerneliddPdS_S_S_S_S_' for 'sm_20'
+ptxas info    : Function properties for _Z27CalcVelocityForNodes_kerneliddPdS_S_S_S_S_
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 20 registers, 104 bytes cmem[0]
+ptxas info    : Compiling entry function '_Z50ApplyAccelerationBoundaryConditionsForNodes_kerneliPdS_S_PiS0_S0_' for 'sm_20'
+ptxas info    : Function properties for _Z50ApplyAccelerationBoundaryConditionsForNodes_kerneliPdS_S_PiS0_S0_
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 10 registers, 88 bytes cmem[0]
+ptxas info    : Compiling entry function '_Z31CalcAccelerationForNodes_kerneliPdS_S_S_S_S_S_' for 'sm_20'
+ptxas info    : Function properties for _Z31CalcAccelerationForNodes_kerneliPdS_S_S_S_S_S_
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 20 registers, 96 bytes cmem[0], 4 bytes cmem[16]
+ptxas info    : Compiling entry function '_Z35CalcHourglassControlForElems_kerneliPiPdS0_S0_S0_S0_S0_S0_S0_S0_S0_S0_S0_' for 'sm_20'
+ptxas info    : Function properties for _Z35CalcHourglassControlForElems_kerneliPiPdS0_S0_S0_S0_S0_S0_S0_S0_S0_S0_S0_
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 32 registers, 4096+0 bytes smem, 144 bytes cmem[0], 36 bytes cmem[16]
+ptxas info    : Compiling entry function '_Z35CalcFBHourglassForceForElems_kernelPdS_S_S_S_S_S_diPiS_S_S_S_S_S_S_S_' for 'sm_20'
+ptxas info    : Function properties for _Z35CalcFBHourglassForceForElems_kernelPdS_S_S_S_S_S_diPiS_S_S_S_S_S_S_S_
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 39 registers, 2048+0 bytes smem, 176 bytes cmem[0], 20 bytes cmem[16]
+ptxas info    : Compiling entry function '_Z30AddNodeForcesFromElems2_kerneliPiS_PdS0_S0_S0_S0_S0_' for 'sm_20'
+ptxas info    : Function properties for _Z30AddNodeForcesFromElems2_kerneliPiS_PdS0_S0_S0_S0_S0_
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 25 registers, 104 bytes cmem[0]
+ptxas info    : Compiling entry function '_Z29AddNodeForcesFromElems_kerneliPiS_PdS0_S0_S0_S0_S0_' for 'sm_20'
+ptxas info    : Function properties for _Z29AddNodeForcesFromElems_kerneliPiS_PdS0_S0_S0_S0_S0_
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 25 registers, 104 bytes cmem[0]
+ptxas info    : Compiling entry function '_Z30IntegrateStressForElems_kerneliPiPdS0_S0_S0_S0_S0_S0_S0_S0_S0_' for 'sm_20'
+ptxas info    : Function properties for _Z30IntegrateStressForElems_kerneliPiPdS0_S0_S0_S0_S0_S0_S0_S0_S0_
+    128 bytes stack frame, 132 bytes spill stores, 132 bytes spill loads
+ptxas info    : Used 63 registers, 128 bytes cmem[0]
+ptxas info    : Compiling entry function '_Z30InitStressTermsForElems_kerneliPdS_S_S_S_' for 'sm_20'
+ptxas info    : Function properties for _Z30InitStressTermsForElems_kerneliPdS_S_S_S_
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 14 registers, 80 bytes cmem[0]

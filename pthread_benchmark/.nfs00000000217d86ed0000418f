@@ -1,0 +1,4 @@
+ptxas info    : Compiling entry function '_Z14calculate_tempiPfS_S_iiiiffffff' for 'sm_20'
+ptxas info    : Function properties for _Z14calculate_tempiPfS_S_iiiiffffff
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 35 registers, 3072+0 bytes smem, 104 bytes cmem[0], 16 bytes cmem[16]

@@ -1,0 +1,16 @@
+ptxas info    : Compiling entry function '_Z7ReducerPcS_P4int4P4int2PiS4_S4_S_S_S1_S3_S4_iii' for 'sm_20'
+ptxas info    : Function properties for _Z7ReducerPcS_P4int4P4int2PiS4_S4_S_S_S1_S3_S4_iii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 12 registers, 140 bytes cmem[0]
+ptxas info    : Compiling entry function '_Z12ReducerCountPcS_P4int4P4int2PiS4_S4_iii' for 'sm_20'
+ptxas info    : Function properties for _Z12ReducerCountPcS_P4int4P4int2PiS4_S4_iii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 2 registers, 100 bytes cmem[0]
+ptxas info    : Compiling entry function '_Z6MapperPcS_P4int4PiS2_S2_P4int2S_S_S1_S2_iii' for 'sm_20'
+ptxas info    : Function properties for _Z6MapperPcS_P4int4PiS2_S2_P4int2S_S_S1_S2_iii
+    8 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 39 registers, 132 bytes cmem[0], 24 bytes cmem[16]
+ptxas info    : Compiling entry function '_Z11MapperCountPcS_P4int4PiS2_S2_iii' for 'sm_20'
+ptxas info    : Function properties for _Z11MapperCountPcS_P4int4PiS2_S2_iii
+    8 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 24 registers, 92 bytes cmem[0], 24 bytes cmem[16]

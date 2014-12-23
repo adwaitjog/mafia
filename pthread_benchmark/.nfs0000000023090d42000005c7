@@ -1,0 +1,60 @@
+ptxas info    : Compiling entry function '_Z20writeBoundary_kerneliiPiS_S_' for 'sm_20'
+ptxas info    : Function properties for _Z20writeBoundary_kerneliiPiS_S_
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 8 registers, 64 bytes cmem[0]
+ptxas info    : Compiling entry function '_Z22setBoundaryInt2_kernelPiiiiP4int2' for 'sm_20'
+ptxas info    : Function properties for _Z22setBoundaryInt2_kernelPiiiiP4int2
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 9 registers, 64 bytes cmem[0]
+ptxas info    : Compiling entry function '_Z23getChunkBoundary_kernelPviP4int4iPi' for 'sm_20'
+ptxas info    : Function properties for _Z23getChunkBoundary_kernelPviP4int4iPi
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 13 registers, 72 bytes cmem[0]
+ptxas info    : Compiling entry function '_Z17copyChunks_kernelPviP4int2iPiS_' for 'sm_20'
+ptxas info    : Function properties for _Z17copyChunks_kernelPviP4int2iPiS_
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 12 registers, 80 bytes cmem[0]
+ptxas info    : Compiling entry function '_Z17setZWArray_kernelP4int4iiP4int2' for 'sm_20'
+ptxas info    : Function properties for _Z17setZWArray_kernelP4int4iiP4int2
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 8 registers, 56 bytes cmem[0]
+ptxas info    : Compiling entry function '_Z17setXYArray_kernelP4int4iiP4int2' for 'sm_20'
+ptxas info    : Function properties for _Z17setXYArray_kernelP4int4iiP4int2
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 10 registers, 56 bytes cmem[0]
+ptxas info    : Compiling entry function '_Z17getZWArray_kernelP4int4iiP4int2' for 'sm_20'
+ptxas info    : Function properties for _Z17getZWArray_kernelP4int4iiP4int2
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 10 registers, 56 bytes cmem[0]
+ptxas info    : Compiling entry function '_Z17getXYArray_kernelP4int4iiP4int2' for 'sm_20'
+ptxas info    : Function properties for _Z17getXYArray_kernelP4int4iiP4int2
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 10 registers, 56 bytes cmem[0]
+ptxas info    : Compiling entry function '_Z19getIntYArray_kernelP4int2iiPi' for 'sm_20'
+ptxas info    : Function properties for _Z19getIntYArray_kernelP4int2iiPi
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 8 registers, 56 bytes cmem[0]
+ptxas info    : Compiling entry function '_Z17initialize_kernelP4int4iiS_' for 'sm_20'
+ptxas info    : Function properties for _Z17initialize_kernelP4int4iiS_
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 10 registers, 64 bytes cmem[0]
+ptxas info    : Compiling entry function '_Z32bitonicSortMultipleBlocks_kernelPviP4int4PiiiS1_' for 'sm_20'
+ptxas info    : Function properties for _Z32bitonicSortMultipleBlocks_kernelPviP4int4PiiiS1_
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 25 registers, 4108+0 bytes smem, 80 bytes cmem[0]
+ptxas info    : Compiling entry function '_Z29bitonicSortSingleBlock_kernelPviP4int4iS1_' for 'sm_20'
+ptxas info    : Function properties for _Z29bitonicSortSingleBlock_kernelPviP4int4iS1_
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 25 registers, 4096+0 bytes smem, 72 bytes cmem[0]
+ptxas info    : Compiling entry function '_Z13bitonicKernelPviP4int4jii' for 'sm_20'
+ptxas info    : Function properties for _Z13bitonicKernelPviP4int4jii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 23 registers, 68 bytes cmem[0]
+ptxas info    : Compiling entry function '_Z21unitBitonicSortKernelPviP4int4ji' for 'sm_20'
+ptxas info    : Function properties for _Z21unitBitonicSortKernelPviP4int4ji
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 29 registers, 4096+0 bytes smem, 64 bytes cmem[0]
+ptxas info    : Compiling entry function '_Z21partBitonicSortKernelPviP4int4jii' for 'sm_20'
+ptxas info    : Function properties for _Z21partBitonicSortKernelPviP4int4jii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 27 registers, 4096+0 bytes smem, 68 bytes cmem[0]

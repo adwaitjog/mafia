@@ -1,0 +1,337 @@
+	.version 2.3
+	.target sm_20
+	.address_size 64
+	// compiled with /i3c/hpcl/tzk133/software/cuda/open64/lib//be
+	// nvopencc 4.0 built on 2011-05-12
+
+	//-----------------------------------------------------------
+	// Compiling laplace3d.cpp3.i (/tmp/ccBI#.BRfpjG)
+	//-----------------------------------------------------------
+
+	//-----------------------------------------------------------
+	// Options:
+	//-----------------------------------------------------------
+	//  Target:ptx, ISA:sm_20, Endian:little, Pointer Size:64
+	//  -O3	(Optimization level)
+	//  -g0	(Debug level)
+	//  -m2	(Report advisories)
+	//-----------------------------------------------------------
+
+	.file	1	"<command-line>"
+	.file	2	"laplace3d.cudafe2.gpu"
+	.file	3	"/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stddef.h"
+	.file	4	"/i3c/hpcl/tzk133/software/cuda/include/crt/device_runtime.h"
+	.file	5	"/i3c/hpcl/tzk133/software/cuda/include/host_defines.h"
+	.file	6	"/i3c/hpcl/tzk133/software/cuda/include/builtin_types.h"
+	.file	7	"/i3c/hpcl/tzk133/software/cuda/include/device_types.h"
+	.file	8	"/i3c/hpcl/tzk133/software/cuda/include/driver_types.h"
+	.file	9	"/i3c/hpcl/tzk133/software/cuda/include/surface_types.h"
+	.file	10	"/i3c/hpcl/tzk133/software/cuda/include/texture_types.h"
+	.file	11	"/i3c/hpcl/tzk133/software/cuda/include/vector_types.h"
+	.file	12	"/i3c/hpcl/tzk133/software/cuda/include/device_launch_parameters.h"
+	.file	13	"/i3c/hpcl/tzk133/software/cuda/include/crt/storage_class.h"
+	.file	14	"/usr/include/bits/types.h"
+	.file	15	"/usr/include/time.h"
+	.file	16	"LPS/laplace3d_kernel.cu"
+	.file	17	"/i3c/hpcl/tzk133/software/cuda/include/common_functions.h"
+	.file	18	"/i3c/hpcl/tzk133/software/cuda/include/math_functions.h"
+	.file	19	"/i3c/hpcl/tzk133/software/cuda/include/math_constants.h"
+	.file	20	"/i3c/hpcl/tzk133/software/cuda/include/device_functions.h"
+	.file	21	"/i3c/hpcl/tzk133/software/cuda/include/sm_11_atomic_functions.h"
+	.file	22	"/i3c/hpcl/tzk133/software/cuda/include/sm_12_atomic_functions.h"
+	.file	23	"/i3c/hpcl/tzk133/software/cuda/include/sm_13_double_functions.h"
+	.file	24	"/i3c/hpcl/tzk133/software/cuda/include/sm_20_atomic_functions.h"
+	.file	25	"/i3c/hpcl/tzk133/software/cuda/include/sm_20_intrinsics.h"
+	.file	26	"/i3c/hpcl/tzk133/software/cuda/include/surface_functions.h"
+	.file	27	"/i3c/hpcl/tzk133/software/cuda/include/texture_fetch_functions.h"
+	.file	28	"/i3c/hpcl/tzk133/software/cuda/include/math_functions_dbl_ptx3.h"
+
+
+	.entry _Z13GPU_laplace3diiiiPfS_ (
+		.param .s32 __cudaparm__Z13GPU_laplace3diiiiPfS__NX,
+		.param .s32 __cudaparm__Z13GPU_laplace3diiiiPfS__NY,
+		.param .s32 __cudaparm__Z13GPU_laplace3diiiiPfS__NZ,
+		.param .s32 __cudaparm__Z13GPU_laplace3diiiiPfS__pitch,
+		.param .u64 __cudaparm__Z13GPU_laplace3diiiiPfS__d_u1,
+		.param .u64 __cudaparm__Z13GPU_laplace3diiiiPfS__d_u2)
+	{
+	.reg .u32 %r<99>;
+	.reg .u64 %rd<40>;
+	.reg .f32 %f<23>;
+	.reg .pred %p<20>;
+	.shared .align 4 .b8 __cuda___cuda_local_var_33000_33_non_const_u132[2448];
+	// __cuda_local_var_32985_13_non_const_indg_h = 20
+	// __cuda_local_var_32985_21_non_const_indg0 = 24
+	// __cuda_local_var_32986_21_non_const_ind_h = 16
+	.loc	16	27	0
+$LDWbegin__Z13GPU_laplace3diiiiPfS_:
+	.loc	16	52	0
+	mov.u32 	%r1, %tid.y;
+	mul.lo.u32 	%r2, %r1, 32;
+	mov.u32 	%r3, %tid.x;
+	add.u32 	%r4, %r3, %r2;
+	mov.s32 	%r5, 75;
+	setp.le.s32 	%p1, %r4, %r5;
+	selp.s32 	%r6, 1, 0, %p1;
+	ld.param.s32 	%r7, [__cudaparm__Z13GPU_laplace3diiiiPfS__NY];
+	ld.param.s32 	%r8, [__cudaparm__Z13GPU_laplace3diiiiPfS__NX];
+	ld.param.s32 	%r9, [__cudaparm__Z13GPU_laplace3diiiiPfS__pitch];
+	cvt.s32.u32 	%r10, %ctaid.y;
+	cvt.s32.u32 	%r11, %ctaid.x;
+	@!%p1 bra 	$Lt_0_14338;
+	cvt.s32.u32 	%r12, %tid.x;
+	mov.u32 	%r13, 1;
+	setp.gt.u32 	%p2, %r1, %r13;
+	@%p2 bra 	$Lt_0_14850;
+	.loc	16	56	0
+	mov.s32 	%r14, %r12;
+	.loc	16	57	0
+	mul.lo.u32 	%r15, %r1, 5;
+	sub.s32 	%r16, %r15, 1;
+	bra.uni 	$Lt_0_14594;
+$Lt_0_14850:
+	.loc	16	60	0
+	shr.s32 	%r17, %r4, 31;
+	mov.s32 	%r18, 1;
+	and.b32 	%r19, %r17, %r18;
+	add.s32 	%r20, %r19, %r4;
+	shr.s32 	%r21, %r20, 1;
+	mul.lo.s32 	%r22, %r21, 2;
+	sub.s32 	%r23, %r4, %r22;
+	mul.lo.s32 	%r24, %r23, 33;
+	sub.s32 	%r14, %r24, 1;
+	.loc	16	61	0
+	shr.s32 	%r25, %r4, 31;
+	mov.s32 	%r26, 1;
+	and.b32 	%r27, %r25, %r26;
+	add.s32 	%r28, %r27, %r4;
+	shr.s32 	%r29, %r28, 1;
+	sub.s32 	%r16, %r29, 33;
+$Lt_0_14594:
+	.loc	16	64	0
+	add.s32 	%r30, %r16, 1;
+	mov.s32 	%r31, 34;
+	mul24.lo.s32 	%r32, %r30, %r31;
+	add.s32 	%r33, %r14, %r32;
+	add.s32 	%r34, %r33, 205;
+	mov.s32 	%r35, %r34;
+	.loc	16	66	0
+	mov.s32 	%r36, 32;
+	mul24.lo.s32 	%r37, %r11, %r36;
+	add.s32 	%r14, %r37, %r14;
+	.loc	16	67	0
+	mov.s32 	%r38, 4;
+	mul24.lo.s32 	%r39, %r10, %r38;
+	add.s32 	%r16, %r39, %r16;
+	.loc	16	68	0
+	mul24.lo.s32 	%r40, %r16, %r9;
+	add.s32 	%r41, %r14, %r40;
+	mov.s32 	%r42, %r41;
+	.loc	16	70	0
+	mov.s32 	%r43, 0;
+	set.ge.u32.s32 	%r44, %r14, %r43;
+	neg.s32 	%r45, %r44;
+	set.lt.u32.s32 	%r46, %r14, %r8;
+	neg.s32 	%r47, %r46;
+	and.b32 	%r48, %r45, %r47;
+	mov.s32 	%r49, 0;
+	set.ge.u32.s32 	%r50, %r16, %r49;
+	neg.s32 	%r51, %r50;
+	set.lt.u32.s32 	%r52, %r16, %r7;
+	neg.s32 	%r53, %r52;
+	and.b32 	%r54, %r51, %r53;
+	and.b32 	%r6, %r48, %r54;
+	bra.uni 	$Lt_0_14082;
+$Lt_0_14338:
+	mov.s32 	%r55, 32;
+	mul24.lo.s32 	%r37, %r11, %r55;
+	mov.s32 	%r56, 4;
+	mul24.lo.s32 	%r39, %r10, %r56;
+	cvt.s32.u32 	%r12, %tid.x;
+$Lt_0_14082:
+	.loc	16	83	0
+	add.s32 	%r57, %r37, %r12;
+	cvt.s32.u32 	%r58, %tid.y;
+	add.s32 	%r59, %r39, %r58;
+	mul24.lo.s32 	%r60, %r59, %r9;
+	add.s32 	%r61, %r57, %r60;
+	setp.lt.s32 	%p3, %r57, %r8;
+	setp.lt.s32 	%p4, %r59, %r7;
+	selp.s32 	%r62, 1, 0, %p3;
+	selp.s32 	%r63, 1, 0, %p4;
+	and.b32 	%r64, %r62, %r63;
+	mov.u32 	%r65, 0;
+	setp.eq.s32 	%p5, %r64, %r65;
+	@%p5 bra 	$Lt_0_15106;
+	.loc	16	91	0
+	mov.u64 	%rd1, __cuda___cuda_local_var_33000_33_non_const_u132;
+	ld.param.u64 	%rd2, [__cudaparm__Z13GPU_laplace3diiiiPfS__d_u1];
+	cvt.s64.s32 	%rd3, %r61;
+	mul.wide.s32 	%rd4, %r61, 4;
+	add.u64 	%rd5, %rd2, %rd4;
+	ld.global.f32 	%f1, [%rd5+0];
+	add.s32 	%r66, %r58, 1;
+	mov.s32 	%r67, 34;
+	mul24.lo.s32 	%r68, %r66, %r67;
+	add.s32 	%r69, %r12, %r68;
+	cvt.s64.s32 	%rd6, %r69;
+	mul.wide.s32 	%rd7, %r69, 4;
+	add.u64 	%rd8, %rd1, %rd7;
+	st.shared.f32 	[%rd8+1636], %f1;
+$Lt_0_15106:
+	mov.u64 	%rd1, __cuda___cuda_local_var_33000_33_non_const_u132;
+	mov.s32 	%r70, 0;
+	setp.ne.s32 	%p6, %r6, %r70;
+	@!%p6 bra 	$Lt_0_15618;
+	.loc	16	92	0
+	ld.param.u64 	%rd9, [__cudaparm__Z13GPU_laplace3diiiiPfS__d_u1];
+	mov.s32 	%r71, %r42;
+	cvt.s64.s32 	%rd10, %r71;
+	mul.wide.s32 	%rd11, %r71, 4;
+	add.u64 	%rd12, %rd9, %rd11;
+	ld.global.f32 	%f2, [%rd12+0];
+	mov.s32 	%r72, %r35;
+	cvt.s64.s32 	%rd13, %r72;
+	mul.wide.s32 	%rd14, %r72, 4;
+	add.u64 	%rd15, %rd1, %rd14;
+	st.shared.f32 	[%rd15+816], %f2;
+$Lt_0_15618:
+	ld.param.s32 	%r73, [__cudaparm__Z13GPU_laplace3diiiiPfS__NZ];
+	mov.u32 	%r74, 0;
+	setp.le.s32 	%p7, %r73, %r74;
+	@%p7 bra 	$Lt_0_16130;
+	add.s32 	%r75, %r58, 1;
+	mov.s32 	%r76, 34;
+	mul24.lo.s32 	%r77, %r75, %r76;
+	add.s32 	%r78, %r77, %r12;
+	add.s32 	%r79, %r78, 205;
+	sub.s32 	%r80, %r8, 1;
+	sub.s32 	%r81, %r7, 1;
+	sub.s32 	%r82, %r73, 1;
+	mov.s32 	%r83, %r73;
+	mov.s32 	%r84, 0;
+	mov.s32 	%r85, %r83;
+$Lt_0_16642:
+ //<loop> Loop body line 92, nesting depth: 1, estimated iterations: unknown
+	mov.u32 	%r86, 0;
+	setp.eq.s32 	%p8, %r64, %r86;
+	@%p8 bra 	$Lt_0_17410;
+	.loc	16	103	0
+	mov.s32 	%r87, %r61;
+	.loc	16	104	0
+	mul24.lo.s32 	%r88, %r7, %r9;
+	add.s32 	%r61, %r61, %r88;
+	.loc	16	105	0
+	cvt.s64.s32 	%rd16, %r78;
+	mul.wide.s32 	%rd17, %r78, 4;
+	add.u64 	%rd18, %rd1, %rd17;
+	ld.shared.f32 	%f3, [%rd18+820];
+	st.shared.f32 	[%rd18+4], %f3;
+	.loc	16	106	0
+	ld.shared.f32 	%f4, [%rd18+1636];
+	st.shared.f32 	[%rd18+820], %f4;
+	setp.le.s32 	%p9, %r82, %r84;
+	@%p9 bra 	$Lt_0_17410;
+	.loc	16	108	0
+	ld.param.u64 	%rd19, [__cudaparm__Z13GPU_laplace3diiiiPfS__d_u1];
+	cvt.s64.s32 	%rd20, %r61;
+	mul.wide.s32 	%rd21, %r61, 4;
+	add.u64 	%rd22, %rd19, %rd21;
+	ld.global.f32 	%f5, [%rd22+0];
+	st.shared.f32 	[%rd18+1636], %f5;
+$Lt_0_17410:
+$Lt_0_16898:
+	@!%p6 bra 	$Lt_0_18434;
+	.loc	16	112	0
+	mov.s32 	%r89, %r42;
+	mul24.lo.s32 	%r90, %r7, %r9;
+	add.s32 	%r91, %r89, %r90;
+	mov.s32 	%r42, %r91;
+	.loc	16	113	0
+	mov.s32 	%r92, %r35;
+	cvt.s64.s32 	%rd23, %r92;
+	mul.wide.s32 	%rd24, %r92, 4;
+	add.u64 	%rd25, %rd1, %rd24;
+	ld.shared.f32 	%f6, [%rd25+0];
+	st.shared.f32 	[%rd25+-816], %f6;
+	.loc	16	114	0
+	ld.shared.f32 	%f7, [%rd25+816];
+	st.shared.f32 	[%rd25+0], %f7;
+	setp.le.s32 	%p10, %r82, %r84;
+	@%p10 bra 	$Lt_0_18434;
+	.loc	16	116	0
+	ld.param.u64 	%rd26, [__cudaparm__Z13GPU_laplace3diiiiPfS__d_u1];
+	cvt.s64.s32 	%rd27, %r91;
+	mul.wide.s32 	%rd28, %r91, 4;
+	add.u64 	%rd29, %rd26, %rd28;
+	ld.global.f32 	%f8, [%rd29+0];
+	st.shared.f32 	[%rd25+816], %f8;
+$Lt_0_18434:
+$Lt_0_17922:
+	.loc	16	119	0
+	bar.sync 	0;
+	mov.u32 	%r93, 0;
+	setp.eq.s32 	%p11, %r64, %r93;
+	@%p11 bra 	$Lt_0_18946;
+	.loc	16	126	0
+	mov.u32 	%r94, 0;
+	setp.eq.s32 	%p12, %r57, %r94;
+	@%p12 bra 	$Lt_0_20738;
+	setp.eq.s32 	%p13, %r80, %r57;
+	@%p13 bra 	$Lt_0_20738;
+	mov.u32 	%r95, 0;
+	setp.eq.s32 	%p14, %r59, %r95;
+	@%p14 bra 	$Lt_0_20738;
+	setp.eq.s32 	%p15, %r81, %r59;
+	@%p15 bra 	$Lt_0_20738;
+	mov.u32 	%r96, 0;
+	setp.eq.s32 	%p16, %r84, %r96;
+	@%p16 bra 	$Lt_0_20738;
+	setp.ne.s32 	%p17, %r82, %r84;
+	@%p17 bra 	$L_0_12546;
+$Lt_0_20738:
+$L_0_12802:
+	.loc	16	127	0
+	cvt.s64.s32 	%rd30, %r78;
+	mul.wide.s32 	%rd31, %r78, 4;
+	add.u64 	%rd32, %rd1, %rd31;
+	ld.shared.f32 	%f9, [%rd32+820];
+	bra.uni 	$L_0_12290;
+$L_0_12546:
+	.loc	16	130	0
+	cvt.s64.s32 	%rd33, %r78;
+	mul.wide.s32 	%rd34, %r78, 4;
+	add.u64 	%rd18, %rd1, %rd34;
+	ld.shared.f32 	%f10, [%rd18+1636];
+	ld.shared.f32 	%f11, [%rd18+4];
+	ld.shared.f32 	%f12, [%rd18+956];
+	ld.shared.f32 	%f13, [%rd18+684];
+	ld.shared.f32 	%f14, [%rd18+816];
+	ld.shared.f32 	%f15, [%rd18+824];
+	add.f32 	%f16, %f14, %f15;
+	add.f32 	%f17, %f13, %f16;
+	add.f32 	%f18, %f12, %f17;
+	add.f32 	%f19, %f11, %f18;
+	add.f32 	%f20, %f10, %f19;
+	mov.f32 	%f21, 0f3e2aaaab;    	// 0.166667
+	mul.f32 	%f9, %f20, %f21;
+$L_0_12290:
+	.loc	16	134	0
+	ld.param.u64 	%rd35, [__cudaparm__Z13GPU_laplace3diiiiPfS__d_u2];
+	mov.s32 	%r97, %r87;
+	cvt.s64.s32 	%rd36, %r97;
+	mul.wide.s32 	%rd37, %r97, 4;
+	add.u64 	%rd38, %rd35, %rd37;
+	st.global.f32 	[%rd38+0], %f9;
+$Lt_0_18946:
+	.loc	16	137	0
+	bar.sync 	0;
+	add.s32 	%r84, %r84, 1;
+	setp.ne.s32 	%p18, %r73, %r84;
+	@%p18 bra 	$Lt_0_16642;
+$Lt_0_16130:
+	.loc	16	140	0
+	exit;
+$LDWend__Z13GPU_laplace3diiiiPfS_:
+	} // _Z13GPU_laplace3diiiiPfS_
+

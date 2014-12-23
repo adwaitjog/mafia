@@ -1,0 +1,12 @@
+ptxas info    : Compiling entry function '_Z12lud_internalPfii' for 'sm_20'
+ptxas info    : Function properties for _Z12lud_internalPfii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 14 registers, 2048+0 bytes smem, 48 bytes cmem[0]
+ptxas info    : Compiling entry function '_Z13lud_perimeterPfii' for 'sm_20'
+ptxas info    : Function properties for _Z13lud_perimeterPfii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 32 registers, 3072+0 bytes smem, 48 bytes cmem[0], 20 bytes cmem[16]
+ptxas info    : Compiling entry function '_Z12lud_diagonalPfii' for 'sm_20'
+ptxas info    : Function properties for _Z12lud_diagonalPfii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 23 registers, 1024+0 bytes smem, 48 bytes cmem[0], 12 bytes cmem[16]
