@@ -421,6 +421,23 @@ void dram_t::cycle()
             n_wr++;
             //bwutil += m_config->BL/m_config->data_command_freq_ratio;
             //bwutil_partial += m_config->BL/m_config->data_command_freq_ratio;
+			if(bk[j]->mrq->data->get_sid() != -1) {//new
+				bwutil[0] += m_config->BL/m_config->data_command_freq_ratio;
+				//bwutil_periodic[0] +=  m_config->BL/m_config->data_command_freq_ratio;
+				//bk[j]->n_access_trunk++;
+				
+				if(find_app(bk[j]->mrq->data->get_sid()) == 1) {//new
+					bwutil[1] += m_config->BL/m_config->data_command_freq_ratio;
+					//bwutil_periodic[1] +=  m_config->BL/m_config->data_command_freq_ratio;
+				}
+				else if (find_app(bk[j]->mrq->data->get_sid()) == 2){
+					bwutil[2] += m_config->BL/m_config->data_command_freq_ratio;
+					//bwutil_periodic[2] +=  m_config->BL/m_config->data_command_freq_ratio;
+				}else{
+					bwutil[3] += m_config->BL/m_config->data_command_freq_ratio;
+					//bwutil_periodic[3] +=  m_config->BL/m_config->data_command_freq_ratio;
+				}
+			}
 #ifdef DRAM_VERIFY
             PRINT_CYCLE=1;
             printf("\tWR  Bk:%d Row:%03x Col:%03x \n",
@@ -598,7 +615,7 @@ void dram_t::print( FILE* simFile) const
            id, m_config->nbk, m_config->busW, m_config->BL, m_config->CL );
    fprintf(simFile,"tRRD=%d tCCD=%d, tRCD=%d tRAS=%d tRP=%d tRC=%d\n",
            m_config->tCCD, m_config->tRRD, m_config->tRCD, m_config->tRAS, m_config->tRP, m_config->tRC );
-   fprintf(simFile,"n_cmd=%d n_nop=%d n_act=%d n_pre=%d n_req=%d n_req_1=%d n_req_2=%d n_req_3=%d n_rd=%d n_write=%d bw_util=%.4g bw_util_1=%.4g bw_util_2=%.4g bw_util_3=%.4g blp=%f blp_1=%f blp_2=%f blp_3=%f\n ",
+   fprintf(simFile,"n_cmd=%d n_nop=%d n_act=%d n_pre=%d n_req=%d n_req_1=%d n_req_2=%d n_req_3=%d n_rd=%d n_write=%d bw_util=%.4g bw_util_1=%.4g bw_util_2=%.4g bw_util_3=%.4g blp=%f blp_1= %f blp_2= %f blp_3= %f\n ",
            n_cmd, n_nop, n_act, n_pre, n_req[0],n_req[1], n_req[2], n_req[3], n_rd, n_wr,
            (float)bwutil[0]/n_cmd, (float)bwutil[1]/n_cmd, (float)bwutil[2]/n_cmd,(float)bwutil[3]/n_cmd,
 			(float)mem_state_blp[0]/n_cmd_blp[0],  (float)mem_state_blp[1]/n_cmd_blp[1],  (float)mem_state_blp[2]/n_cmd_blp[2], (float)mem_state_blp[3]/n_cmd_blp[3]   );
