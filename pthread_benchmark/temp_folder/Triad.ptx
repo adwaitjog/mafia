@@ -1,0 +1,84 @@
+	.version 2.3
+	.target sm_20
+	.address_size 64
+	// compiled with /i3c/hpcl/tzk133/software/cuda/open64/lib//be
+	// nvopencc 4.0 built on 2011-05-12
+
+	//-----------------------------------------------------------
+	// Compiling Triad.cpp3.i (/tmp/ccBI#.Tooh9G)
+	//-----------------------------------------------------------
+
+	//-----------------------------------------------------------
+	// Options:
+	//-----------------------------------------------------------
+	//  Target:ptx, ISA:sm_20, Endian:little, Pointer Size:64
+	//  -O3	(Optimization level)
+	//  -g0	(Debug level)
+	//  -m2	(Report advisories)
+	//-----------------------------------------------------------
+
+	.file	1	"<command-line>"
+	.file	2	"Triad.cudafe2.gpu"
+	.file	3	"/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stddef.h"
+	.file	4	"/i3c/hpcl/tzk133/software/cuda/include/crt/device_runtime.h"
+	.file	5	"/i3c/hpcl/tzk133/software/cuda/include/host_defines.h"
+	.file	6	"/i3c/hpcl/tzk133/software/cuda/include/builtin_types.h"
+	.file	7	"/i3c/hpcl/tzk133/software/cuda/include/device_types.h"
+	.file	8	"/i3c/hpcl/tzk133/software/cuda/include/driver_types.h"
+	.file	9	"/i3c/hpcl/tzk133/software/cuda/include/surface_types.h"
+	.file	10	"/i3c/hpcl/tzk133/software/cuda/include/texture_types.h"
+	.file	11	"/i3c/hpcl/tzk133/software/cuda/include/vector_types.h"
+	.file	12	"/i3c/hpcl/tzk133/software/cuda/include/device_launch_parameters.h"
+	.file	13	"/i3c/hpcl/tzk133/software/cuda/include/crt/storage_class.h"
+	.file	14	"/usr/include/bits/types.h"
+	.file	15	"/usr/include/time.h"
+	.file	16	"TRD/Triad.cu"
+	.file	17	"/i3c/hpcl/tzk133/software/cuda/include/common_functions.h"
+	.file	18	"/i3c/hpcl/tzk133/software/cuda/include/math_functions.h"
+	.file	19	"/i3c/hpcl/tzk133/software/cuda/include/math_constants.h"
+	.file	20	"/i3c/hpcl/tzk133/software/cuda/include/device_functions.h"
+	.file	21	"/i3c/hpcl/tzk133/software/cuda/include/sm_11_atomic_functions.h"
+	.file	22	"/i3c/hpcl/tzk133/software/cuda/include/sm_12_atomic_functions.h"
+	.file	23	"/i3c/hpcl/tzk133/software/cuda/include/sm_13_double_functions.h"
+	.file	24	"/i3c/hpcl/tzk133/software/cuda/include/sm_20_atomic_functions.h"
+	.file	25	"/i3c/hpcl/tzk133/software/cuda/include/sm_20_intrinsics.h"
+	.file	26	"/i3c/hpcl/tzk133/software/cuda/include/surface_functions.h"
+	.file	27	"/i3c/hpcl/tzk133/software/cuda/include/texture_fetch_functions.h"
+	.file	28	"/i3c/hpcl/tzk133/software/cuda/include/math_functions_dbl_ptx3.h"
+
+
+	.entry _Z5triadPfS_S_f (
+		.param .u64 __cudaparm__Z5triadPfS_S_f_A,
+		.param .u64 __cudaparm__Z5triadPfS_S_f_B,
+		.param .u64 __cudaparm__Z5triadPfS_S_f_C,
+		.param .f32 __cudaparm__Z5triadPfS_S_f_s)
+	{
+	.reg .u32 %r<7>;
+	.reg .u64 %rd<10>;
+	.reg .f32 %f<6>;
+	.loc	16	33	0
+$LDWbegin__Z5triadPfS_S_f:
+	.loc	16	36	0
+	mov.u32 	%r1, %tid.x;
+	mov.u32 	%r2, %ctaid.x;
+	mov.u32 	%r3, %ntid.x;
+	mul.lo.u32 	%r4, %r2, %r3;
+	add.u32 	%r5, %r1, %r4;
+	cvt.s64.s32 	%rd1, %r5;
+	mul.wide.s32 	%rd2, %r5, 4;
+	ld.param.u64 	%rd3, [__cudaparm__Z5triadPfS_S_f_A];
+	add.u64 	%rd4, %rd3, %rd2;
+	ld.global.f32 	%f1, [%rd4+0];
+	ld.param.u64 	%rd5, [__cudaparm__Z5triadPfS_S_f_B];
+	add.u64 	%rd6, %rd5, %rd2;
+	ld.global.f32 	%f2, [%rd6+0];
+	ld.param.f32 	%f3, [__cudaparm__Z5triadPfS_S_f_s];
+	fma.rn.f32 	%f4, %f2, %f3, %f1;
+	ld.param.u64 	%rd7, [__cudaparm__Z5triadPfS_S_f_C];
+	add.u64 	%rd8, %rd7, %rd2;
+	st.global.f32 	[%rd8+0], %f4;
+	.loc	16	37	0
+	exit;
+$LDWend__Z5triadPfS_S_f:
+	} // _Z5triadPfS_S_f
+

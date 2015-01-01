@@ -1,0 +1,4 @@
+ptxas info    : Compiling entry function '_Z15BlackScholesGPUPfS_S_S_S_ffi' for 'sm_20'
+ptxas info    : Function properties for _Z15BlackScholesGPUPfS_S_S_S_ffi
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 31 registers, 84 bytes cmem[0], 44 bytes cmem[16]

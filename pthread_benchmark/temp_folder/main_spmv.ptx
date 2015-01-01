@@ -1,0 +1,382 @@
+	.version 2.3
+	.target sm_20
+	.address_size 64
+	// compiled with /i3c/hpcl/tzk133/software/cuda/open64/lib//be
+	// nvopencc 4.0 built on 2011-05-12
+
+	//-----------------------------------------------------------
+	// Compiling main_spmv.cpp3.i (/tmp/ccBI#.rIMQJf)
+	//-----------------------------------------------------------
+
+	//-----------------------------------------------------------
+	// Options:
+	//-----------------------------------------------------------
+	//  Target:ptx, ISA:sm_20, Endian:little, Pointer Size:64
+	//  -O3	(Optimization level)
+	//  -g0	(Debug level)
+	//  -m2	(Report advisories)
+	//-----------------------------------------------------------
+
+	.file	1	"<command-line>"
+	.file	2	"main_spmv.cudafe2.gpu"
+	.file	3	"/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stddef.h"
+	.file	4	"/i3c/hpcl/tzk133/software/cuda/include/crt/device_runtime.h"
+	.file	5	"/i3c/hpcl/tzk133/software/cuda/include/host_defines.h"
+	.file	6	"/i3c/hpcl/tzk133/software/cuda/include/builtin_types.h"
+	.file	7	"/i3c/hpcl/tzk133/software/cuda/include/device_types.h"
+	.file	8	"/i3c/hpcl/tzk133/software/cuda/include/driver_types.h"
+	.file	9	"/i3c/hpcl/tzk133/software/cuda/include/surface_types.h"
+	.file	10	"/i3c/hpcl/tzk133/software/cuda/include/texture_types.h"
+	.file	11	"/i3c/hpcl/tzk133/software/cuda/include/vector_types.h"
+	.file	12	"/i3c/hpcl/tzk133/software/cuda/include/device_launch_parameters.h"
+	.file	13	"/i3c/hpcl/tzk133/software/cuda/include/crt/storage_class.h"
+	.file	14	"/usr/include/bits/types.h"
+	.file	15	"/usr/include/time.h"
+	.file	16	"SPMV/jds_kernels.cu"
+	.file	17	"SPMV/spmv_jds.h"
+	.file	18	"/i3c/hpcl/tzk133/software/cuda/include/common_functions.h"
+	.file	19	"/i3c/hpcl/tzk133/software/cuda/include/math_functions.h"
+	.file	20	"/i3c/hpcl/tzk133/software/cuda/include/math_constants.h"
+	.file	21	"/i3c/hpcl/tzk133/software/cuda/include/device_functions.h"
+	.file	22	"/i3c/hpcl/tzk133/software/cuda/include/sm_11_atomic_functions.h"
+	.file	23	"/i3c/hpcl/tzk133/software/cuda/include/sm_12_atomic_functions.h"
+	.file	24	"/i3c/hpcl/tzk133/software/cuda/include/sm_13_double_functions.h"
+	.file	25	"/i3c/hpcl/tzk133/software/cuda/include/sm_20_atomic_functions.h"
+	.file	26	"/i3c/hpcl/tzk133/software/cuda/include/sm_20_intrinsics.h"
+	.file	27	"/i3c/hpcl/tzk133/software/cuda/include/surface_functions.h"
+	.file	28	"/i3c/hpcl/tzk133/software/cuda/include/texture_fetch_functions.h"
+	.file	29	"/i3c/hpcl/tzk133/software/cuda/include/math_functions_dbl_ptx3.h"
+
+	.global .texref tex_x_float;
+	.const .align 4 .b8 jds_ptr_int[20000];
+	.const .align 4 .b8 sh_zcnt_int[20000];
+
+	.entry _Z16spmv_jds_texturePfPKfPKiS3_S1_S3_i (
+		.param .u64 __cudaparm__Z16spmv_jds_texturePfPKfPKiS3_S1_S3_i_dst_vector,
+		.param .u64 __cudaparm__Z16spmv_jds_texturePfPKfPKiS3_S1_S3_i_d_data,
+		.param .u64 __cudaparm__Z16spmv_jds_texturePfPKfPKiS3_S1_S3_i_d_index,
+		.param .u64 __cudaparm__Z16spmv_jds_texturePfPKfPKiS3_S1_S3_i_d_perm,
+		.param .u64 __cudaparm__Z16spmv_jds_texturePfPKfPKiS3_S1_S3_i_x_vec,
+		.param .u64 __cudaparm__Z16spmv_jds_texturePfPKfPKiS3_S1_S3_i_d_nzcnt,
+		.param .s32 __cudaparm__Z16spmv_jds_texturePfPKfPKiS3_S1_S3_i_dim)
+	{
+	.reg .u32 %r<50>;
+	.reg .u64 %rd<38>;
+	.reg .f32 %f<22>;
+	.reg .pred %p<7>;
+	.loc	16	11	0
+$LDWbegin__Z16spmv_jds_texturePfPKfPKiS3_S1_S3_i:
+	.loc	16	13	0
+	mov.u32 	%r1, %ntid.x;
+	mov.u32 	%r2, %ctaid.x;
+	mul.lo.u32 	%r3, %r2, %r1;
+	mov.u32 	%r4, %tid.x;
+	add.u32 	%r5, %r4, %r3;
+	mov.s32 	%r6, %r5;
+	.loc	16	14	0
+	shr.s32 	%r7, %r5, 5;
+	ld.param.s32 	%r8, [__cudaparm__Z16spmv_jds_texturePfPKfPKiS3_S1_S3_i_dim];
+	setp.le.s32 	%p1, %r8, %r5;
+	@%p1 bra 	$Lt_0_3074;
+	mov.u32 	%r9, %nctaid.x;
+	mul.lo.u32 	%r10, %r9, %r1;
+	shr.u32 	%r11, %r10, 5;
+	cvt.s64.u32 	%rd1, %r10;
+	mov.u64 	%rd2, sh_zcnt_int;
+	cvt.s64.s32 	%rd3, %r7;
+	mul.wide.s32 	%rd4, %r7, 4;
+	add.u64 	%rd5, %rd2, %rd4;
+	cvt.s64.u32 	%rd6, %r11;
+	ld.param.u64 	%rd7, [__cudaparm__Z16spmv_jds_texturePfPKfPKiS3_S1_S3_i_d_perm];
+	cvt.s64.s32 	%rd8, %r5;
+	mul.wide.s32 	%rd9, %r5, 4;
+	add.u64 	%rd10, %rd7, %rd9;
+	mul.wide.u32 	%rd11, %r10, 4;
+	ld.param.u64 	%rd12, [__cudaparm__Z16spmv_jds_texturePfPKfPKiS3_S1_S3_i_dst_vector];
+	ld.param.u64 	%rd13, [__cudaparm__Z16spmv_jds_texturePfPKfPKiS3_S1_S3_i_d_index];
+	ld.param.u64 	%rd14, [__cudaparm__Z16spmv_jds_texturePfPKfPKiS3_S1_S3_i_d_data];
+	ld.const.s32 	%r12, [jds_ptr_int+0];
+	mov.u64 	%rd15, jds_ptr_int;
+$Lt_0_3586:
+ //<loop> Loop body line 14, nesting depth: 1, estimated iterations: unknown
+	.loc	16	22	0
+	ld.const.s32 	%r13, [%rd5+0];
+	.loc	16	25	0
+	add.s32 	%r14, %r6, %r12;
+	cvt.s64.s32 	%rd16, %r14;
+	mul.wide.s32 	%rd17, %r14, 4;
+	add.u64 	%rd18, %rd17, %rd14;
+	ld.global.f32 	%f1, [%rd18+0];
+	.loc	16	27	0
+	add.u64 	%rd19, %rd17, %rd13;
+	ld.global.s32 	%r15, [%rd19+0];
+	mov.u32 	%r16, %r15;
+	mov.s32 	%r17, 0;
+	mov.u32 	%r18, %r17;
+	mov.s32 	%r19, 0;
+	mov.u32 	%r20, %r19;
+	mov.s32 	%r21, 0;
+	mov.u32 	%r22, %r21;
+	tex.1d.v4.f32.s32 {%f2,%f3,%f4,%f5},[tex_x_float,{%r16,%r18,%r20,%r22}];
+	mov.f32 	%f6, %f2;
+	mov.f32 	%f7, %f6;
+	mov.u32 	%r23, 1;
+	setp.le.s32 	%p2, %r13, %r23;
+	@%p2 bra 	$Lt_0_4098;
+	.loc	16	32	0
+	ld.const.s32 	%r24, [jds_ptr_int+4];
+	add.s32 	%r25, %r24, %r6;
+	mov.s32 	%r26, %r25;
+	.loc	16	33	0
+	cvt.s64.s32 	%rd20, %r25;
+	mul.wide.s32 	%rd21, %r25, 4;
+	add.u64 	%rd22, %rd13, %rd21;
+	ld.global.s32 	%r27, [%rd22+0];
+	mov.u32 	%r28, 2;
+	setp.le.s32 	%p3, %r13, %r28;
+	@%p3 bra 	$Lt_0_5890;
+	sub.s32 	%r29, %r13, 2;
+	add.u64 	%rd23, %rd15, 8;
+	mov.s32 	%r30, 2;
+	mov.f32 	%f8, 0f00000000;     	// 0
+	mov.s32 	%r31, %r29;
+$Lt_0_4866:
+ //<loop> Loop body line 33, nesting depth: 1, estimated iterations: unknown
+	.loc	16	41	0
+	cvt.s64.s32 	%rd24, %r26;
+	mul.wide.s32 	%rd25, %r26, 4;
+	add.u64 	%rd26, %rd14, %rd25;
+	ld.global.f32 	%f9, [%rd26+0];
+	.loc	16	43	0
+	ld.const.s32 	%r32, [%rd23+0];
+	add.s32 	%r33, %r32, %r6;
+	mov.s32 	%r26, %r33;
+	.loc	16	46	0
+	mov.u32 	%r34, %r27;
+	mov.s32 	%r35, 0;
+	mov.u32 	%r36, %r35;
+	mov.s32 	%r37, 0;
+	mov.u32 	%r38, %r37;
+	mov.s32 	%r39, 0;
+	mov.u32 	%r40, %r39;
+	tex.1d.v4.f32.s32 {%f10,%f11,%f12,%f13},[tex_x_float,{%r34,%r36,%r38,%r40}];
+	mov.f32 	%f14, %f10;
+	.loc	16	49	0
+	fma.rn.f32 	%f8, %f1, %f7, %f8;
+	.loc	16	51	0
+	cvt.s64.s32 	%rd27, %r33;
+	mul.wide.s32 	%rd28, %r33, 4;
+	add.u64 	%rd29, %rd13, %rd28;
+	ld.global.s32 	%r27, [%rd29+0];
+	.loc	16	53	0
+	mov.f32 	%f1, %f9;
+	.loc	16	54	0
+	mov.f32 	%f7, %f14;
+	add.s32 	%r30, %r30, 1;
+	add.u64 	%rd23, %rd23, 4;
+	setp.ne.s32 	%p4, %r13, %r30;
+	@%p4 bra 	$Lt_0_4866;
+	bra.uni 	$Lt_0_4354;
+$Lt_0_5890:
+	mov.f32 	%f8, 0f00000000;     	// 0
+$Lt_0_4354:
+	.loc	16	60	0
+	mov.u32 	%r41, %r27;
+	mov.s32 	%r42, 0;
+	mov.u32 	%r43, %r42;
+	mov.s32 	%r44, 0;
+	mov.u32 	%r45, %r44;
+	mov.s32 	%r46, 0;
+	mov.u32 	%r47, %r46;
+	tex.1d.v4.f32.s32 {%f15,%f16,%f17,%f18},[tex_x_float,{%r41,%r43,%r45,%r47}];
+	mov.f32 	%f19, %f15;
+	.loc	16	62	0
+	fma.rn.f32 	%f8, %f1, %f7, %f8;
+	.loc	16	64	0
+	cvt.s64.s32 	%rd30, %r26;
+	mul.wide.s32 	%rd31, %r26, 4;
+	add.u64 	%rd32, %rd14, %rd31;
+	ld.global.f32 	%f1, [%rd32+0];
+	.loc	16	65	0
+	mov.f32 	%f7, %f19;
+	bra.uni 	$Lt_0_3842;
+$Lt_0_4098:
+	mov.f32 	%f8, 0f00000000;     	// 0
+$Lt_0_3842:
+	.loc	16	71	0
+	fma.rn.f32 	%f20, %f1, %f7, %f8;
+	ld.global.s32 	%r48, [%rd10+0];
+	cvt.s64.s32 	%rd33, %r48;
+	mul.wide.s32 	%rd34, %r48, 4;
+	add.u64 	%rd35, %rd12, %rd34;
+	st.global.f32 	[%rd35+0], %f20;
+	.loc	16	74	0
+	mul.lo.u64 	%rd36, %rd6, 4;
+	add.u64 	%rd5, %rd5, %rd36;
+	.loc	16	75	0
+	add.s32 	%r6, %r6, %r10;
+	add.u64 	%rd10, %rd10, %rd11;
+	setp.lt.s32 	%p5, %r6, %r8;
+	@%p5 bra 	$Lt_0_3586;
+$Lt_0_3074:
+	.loc	16	77	0
+	exit;
+$LDWend__Z16spmv_jds_texturePfPKfPKiS3_S1_S3_i:
+	} // _Z16spmv_jds_texturePfPKfPKiS3_S1_S3_i
+
+	.entry _Z8spmv_jdsPfPKfPKiS3_S1_S3_i (
+		.param .u64 __cudaparm__Z8spmv_jdsPfPKfPKiS3_S1_S3_i_dst_vector,
+		.param .u64 __cudaparm__Z8spmv_jdsPfPKfPKiS3_S1_S3_i_d_data,
+		.param .u64 __cudaparm__Z8spmv_jdsPfPKfPKiS3_S1_S3_i_d_index,
+		.param .u64 __cudaparm__Z8spmv_jdsPfPKfPKiS3_S1_S3_i_d_perm,
+		.param .u64 __cudaparm__Z8spmv_jdsPfPKfPKiS3_S1_S3_i_x_vec,
+		.param .u64 __cudaparm__Z8spmv_jdsPfPKfPKiS3_S1_S3_i_d_nzcnt,
+		.param .s32 __cudaparm__Z8spmv_jdsPfPKfPKiS3_S1_S3_i_dim)
+	{
+	.reg .u32 %r<29>;
+	.reg .u64 %rd<48>;
+	.reg .f32 %f<8>;
+	.reg .pred %p<7>;
+	.loc	16	82	0
+$LDWbegin__Z8spmv_jdsPfPKfPKiS3_S1_S3_i:
+	.loc	16	84	0
+	mov.u32 	%r1, %ntid.x;
+	mov.u32 	%r2, %ctaid.x;
+	mul.lo.u32 	%r3, %r2, %r1;
+	mov.u32 	%r4, %tid.x;
+	add.u32 	%r5, %r4, %r3;
+	mov.s32 	%r6, %r5;
+	.loc	16	85	0
+	shr.s32 	%r7, %r5, 5;
+	ld.param.s32 	%r8, [__cudaparm__Z8spmv_jdsPfPKfPKiS3_S1_S3_i_dim];
+	setp.le.s32 	%p1, %r8, %r5;
+	@%p1 bra 	$Lt_1_3074;
+	mov.u32 	%r9, %nctaid.x;
+	mul.lo.u32 	%r10, %r9, %r1;
+	shr.u32 	%r11, %r10, 5;
+	cvt.s64.u32 	%rd1, %r10;
+	mov.u64 	%rd2, sh_zcnt_int;
+	cvt.s64.s32 	%rd3, %r7;
+	mul.wide.s32 	%rd4, %r7, 4;
+	add.u64 	%rd5, %rd2, %rd4;
+	cvt.s64.u32 	%rd6, %r11;
+	ld.param.u64 	%rd7, [__cudaparm__Z8spmv_jdsPfPKfPKiS3_S1_S3_i_d_perm];
+	cvt.s64.s32 	%rd8, %r5;
+	mul.wide.s32 	%rd9, %r5, 4;
+	add.u64 	%rd10, %rd7, %rd9;
+	mul.wide.u32 	%rd11, %r10, 4;
+	ld.param.u64 	%rd12, [__cudaparm__Z8spmv_jdsPfPKfPKiS3_S1_S3_i_dst_vector];
+	ld.param.u64 	%rd13, [__cudaparm__Z8spmv_jdsPfPKfPKiS3_S1_S3_i_d_index];
+	ld.param.u64 	%rd14, [__cudaparm__Z8spmv_jdsPfPKfPKiS3_S1_S3_i_x_vec];
+	ld.param.u64 	%rd15, [__cudaparm__Z8spmv_jdsPfPKfPKiS3_S1_S3_i_d_data];
+	ld.const.s32 	%r12, [jds_ptr_int+0];
+	mov.u64 	%rd16, jds_ptr_int;
+$Lt_1_3586:
+ //<loop> Loop body line 85, nesting depth: 1, estimated iterations: unknown
+	.loc	16	91	0
+	ld.const.s32 	%r13, [%rd5+0];
+	.loc	16	94	0
+	add.s32 	%r14, %r6, %r12;
+	cvt.s64.s32 	%rd17, %r14;
+	mul.wide.s32 	%rd18, %r14, 4;
+	add.u64 	%rd19, %rd18, %rd15;
+	ld.global.f32 	%f1, [%rd19+0];
+	.loc	16	96	0
+	add.u64 	%rd20, %rd18, %rd13;
+	ld.global.s32 	%r15, [%rd20+0];
+	cvt.s64.s32 	%rd21, %r15;
+	mul.wide.s32 	%rd22, %r15, 4;
+	add.u64 	%rd23, %rd14, %rd22;
+	ld.global.f32 	%f2, [%rd23+0];
+	mov.u32 	%r16, 1;
+	setp.le.s32 	%p2, %r13, %r16;
+	@%p2 bra 	$Lt_1_4098;
+	.loc	16	101	0
+	ld.const.s32 	%r17, [jds_ptr_int+4];
+	add.s32 	%r18, %r17, %r6;
+	mov.s32 	%r19, %r18;
+	.loc	16	102	0
+	cvt.s64.s32 	%rd24, %r18;
+	mul.wide.s32 	%rd25, %r18, 4;
+	add.u64 	%rd26, %rd13, %rd25;
+	ld.global.s32 	%r20, [%rd26+0];
+	mov.u32 	%r21, 2;
+	setp.le.s32 	%p3, %r13, %r21;
+	@%p3 bra 	$Lt_1_5890;
+	sub.s32 	%r22, %r13, 2;
+	add.u64 	%rd27, %rd16, 8;
+	mov.s32 	%r23, 2;
+	mov.f32 	%f3, 0f00000000;     	// 0
+	mov.s32 	%r24, %r22;
+$Lt_1_4866:
+ //<loop> Loop body line 102, nesting depth: 1, estimated iterations: unknown
+	.loc	16	109	0
+	cvt.s64.s32 	%rd28, %r19;
+	mul.wide.s32 	%rd29, %r19, 4;
+	add.u64 	%rd30, %rd15, %rd29;
+	ld.global.f32 	%f4, [%rd30+0];
+	.loc	16	111	0
+	ld.const.s32 	%r25, [%rd27+0];
+	add.s32 	%r26, %r25, %r6;
+	mov.s32 	%r19, %r26;
+	.loc	16	114	0
+	cvt.s64.s32 	%rd31, %r20;
+	mul.wide.s32 	%rd32, %r20, 4;
+	add.u64 	%rd33, %rd14, %rd32;
+	ld.global.f32 	%f5, [%rd33+0];
+	.loc	16	117	0
+	fma.rn.f32 	%f3, %f1, %f2, %f3;
+	.loc	16	119	0
+	cvt.s64.s32 	%rd34, %r26;
+	mul.wide.s32 	%rd35, %r26, 4;
+	add.u64 	%rd36, %rd13, %rd35;
+	ld.global.s32 	%r20, [%rd36+0];
+	.loc	16	121	0
+	mov.f32 	%f1, %f4;
+	.loc	16	122	0
+	mov.f32 	%f2, %f5;
+	add.s32 	%r23, %r23, 1;
+	add.u64 	%rd27, %rd27, 4;
+	setp.ne.s32 	%p4, %r13, %r23;
+	@%p4 bra 	$Lt_1_4866;
+	bra.uni 	$Lt_1_4354;
+$Lt_1_5890:
+	mov.f32 	%f3, 0f00000000;     	// 0
+$Lt_1_4354:
+	.loc	16	130	0
+	fma.rn.f32 	%f3, %f1, %f2, %f3;
+	.loc	16	132	0
+	cvt.s64.s32 	%rd37, %r19;
+	mul.wide.s32 	%rd38, %r19, 4;
+	add.u64 	%rd39, %rd15, %rd38;
+	ld.global.f32 	%f1, [%rd39+0];
+	.loc	16	133	0
+	cvt.s64.s32 	%rd40, %r20;
+	mul.wide.s32 	%rd41, %r20, 4;
+	add.u64 	%rd42, %rd14, %rd41;
+	ld.global.f32 	%f2, [%rd42+0];
+	bra.uni 	$Lt_1_3842;
+$Lt_1_4098:
+	mov.f32 	%f3, 0f00000000;     	// 0
+$Lt_1_3842:
+	.loc	16	139	0
+	fma.rn.f32 	%f6, %f1, %f2, %f3;
+	ld.global.s32 	%r27, [%rd10+0];
+	cvt.s64.s32 	%rd43, %r27;
+	mul.wide.s32 	%rd44, %r27, 4;
+	add.u64 	%rd45, %rd12, %rd44;
+	st.global.f32 	[%rd45+0], %f6;
+	.loc	16	140	0
+	add.s32 	%r6, %r6, %r10;
+	add.u64 	%rd10, %rd10, %rd11;
+	.loc	16	141	0
+	mul.lo.u64 	%rd46, %rd6, 4;
+	add.u64 	%rd5, %rd5, %rd46;
+	setp.lt.s32 	%p5, %r6, %r8;
+	@%p5 bra 	$Lt_1_3586;
+$Lt_1_3074:
+	.loc	16	144	0
+	exit;
+$LDWend__Z8spmv_jdsPfPKfPKiS3_S1_S3_i:
+	} // _Z8spmv_jdsPfPKfPKiS3_S1_S3_i
+

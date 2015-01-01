@@ -1,0 +1,48 @@
+	.version 2.3
+	.target sm_20
+	.address_size 64
+	// compiled with /i3c/hpcl/tzk133/software/cuda/open64/lib//be
+	// nvopencc 4.0 built on 2011-05-12
+
+	//-----------------------------------------------------------
+	// Compiling common.cpp3.i (/tmp/ccBI#.GNBcop)
+	//-----------------------------------------------------------
+
+	//-----------------------------------------------------------
+	// Options:
+	//-----------------------------------------------------------
+	//  Target:ptx, ISA:sm_20, Endian:little, Pointer Size:64
+	//  -O3	(Optimization level)
+	//  -g0	(Debug level)
+	//  -m2	(Report advisories)
+	//-----------------------------------------------------------
+
+	.file	1	"<command-line>"
+	.file	2	"common.cudafe2.gpu"
+	.file	3	"/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stddef.h"
+	.file	4	"/i3c/hpcl/tzk133/software/cuda/include/crt/device_runtime.h"
+	.file	5	"/i3c/hpcl/tzk133/software/cuda/include/host_defines.h"
+	.file	6	"/i3c/hpcl/tzk133/software/cuda/include/builtin_types.h"
+	.file	7	"/i3c/hpcl/tzk133/software/cuda/include/device_types.h"
+	.file	8	"/i3c/hpcl/tzk133/software/cuda/include/driver_types.h"
+	.file	9	"/i3c/hpcl/tzk133/software/cuda/include/surface_types.h"
+	.file	10	"/i3c/hpcl/tzk133/software/cuda/include/texture_types.h"
+	.file	11	"/i3c/hpcl/tzk133/software/cuda/include/vector_types.h"
+	.file	12	"/i3c/hpcl/tzk133/software/cuda/include/device_launch_parameters.h"
+	.file	13	"/i3c/hpcl/tzk133/software/cuda/include/crt/storage_class.h"
+	.file	14	"/usr/include/bits/types.h"
+	.file	15	"/usr/include/time.h"
+	.file	16	"/i3c/hpcl/tzk133/software/cuda/include/common_functions.h"
+	.file	17	"/i3c/hpcl/tzk133/software/cuda/include/math_functions.h"
+	.file	18	"/i3c/hpcl/tzk133/software/cuda/include/math_constants.h"
+	.file	19	"/i3c/hpcl/tzk133/software/cuda/include/device_functions.h"
+	.file	20	"/i3c/hpcl/tzk133/software/cuda/include/sm_11_atomic_functions.h"
+	.file	21	"/i3c/hpcl/tzk133/software/cuda/include/sm_12_atomic_functions.h"
+	.file	22	"/i3c/hpcl/tzk133/software/cuda/include/sm_13_double_functions.h"
+	.file	23	"/i3c/hpcl/tzk133/software/cuda/include/sm_20_atomic_functions.h"
+	.file	24	"/i3c/hpcl/tzk133/software/cuda/include/sm_20_intrinsics.h"
+	.file	25	"/i3c/hpcl/tzk133/software/cuda/include/surface_functions.h"
+	.file	26	"/i3c/hpcl/tzk133/software/cuda/include/texture_fetch_functions.h"
+	.file	27	"/i3c/hpcl/tzk133/software/cuda/include/math_functions_dbl_ptx3.h"
+
+

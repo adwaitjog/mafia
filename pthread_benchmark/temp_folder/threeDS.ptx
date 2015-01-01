@@ -1,0 +1,298 @@
+	.version 2.3
+	.target sm_20
+	.address_size 64
+	// compiled with /i3c/hpcl/tzk133/software/cuda/open64/lib//be
+	// nvopencc 4.0 built on 2011-05-12
+
+	//-----------------------------------------------------------
+	// Compiling threeDS.cpp3.i (/tmp/ccBI#.Uy3eZb)
+	//-----------------------------------------------------------
+
+	//-----------------------------------------------------------
+	// Options:
+	//-----------------------------------------------------------
+	//  Target:ptx, ISA:sm_20, Endian:little, Pointer Size:64
+	//  -O3	(Optimization level)
+	//  -g0	(Debug level)
+	//  -m2	(Report advisories)
+	//-----------------------------------------------------------
+
+	.file	1	"<command-line>"
+	.file	2	"threeDS.cudafe2.gpu"
+	.file	3	"/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stddef.h"
+	.file	4	"/i3c/hpcl/tzk133/software/cuda/include/crt/device_runtime.h"
+	.file	5	"/i3c/hpcl/tzk133/software/cuda/include/host_defines.h"
+	.file	6	"/i3c/hpcl/tzk133/software/cuda/include/builtin_types.h"
+	.file	7	"/i3c/hpcl/tzk133/software/cuda/include/device_types.h"
+	.file	8	"/i3c/hpcl/tzk133/software/cuda/include/driver_types.h"
+	.file	9	"/i3c/hpcl/tzk133/software/cuda/include/surface_types.h"
+	.file	10	"/i3c/hpcl/tzk133/software/cuda/include/texture_types.h"
+	.file	11	"/i3c/hpcl/tzk133/software/cuda/include/vector_types.h"
+	.file	12	"/i3c/hpcl/tzk133/software/cuda/include/device_launch_parameters.h"
+	.file	13	"/i3c/hpcl/tzk133/software/cuda/include/crt/storage_class.h"
+	.file	14	"/usr/include/bits/types.h"
+	.file	15	"/usr/include/time.h"
+	.file	16	"3DS/threeDS.cu"
+	.file	17	"/i3c/hpcl/tzk133/software/cuda/include/common_functions.h"
+	.file	18	"/i3c/hpcl/tzk133/software/cuda/include/math_functions.h"
+	.file	19	"/i3c/hpcl/tzk133/software/cuda/include/math_constants.h"
+	.file	20	"/i3c/hpcl/tzk133/software/cuda/include/device_functions.h"
+	.file	21	"/i3c/hpcl/tzk133/software/cuda/include/sm_11_atomic_functions.h"
+	.file	22	"/i3c/hpcl/tzk133/software/cuda/include/sm_12_atomic_functions.h"
+	.file	23	"/i3c/hpcl/tzk133/software/cuda/include/sm_13_double_functions.h"
+	.file	24	"/i3c/hpcl/tzk133/software/cuda/include/sm_20_atomic_functions.h"
+	.file	25	"/i3c/hpcl/tzk133/software/cuda/include/sm_20_intrinsics.h"
+	.file	26	"/i3c/hpcl/tzk133/software/cuda/include/surface_functions.h"
+	.file	27	"/i3c/hpcl/tzk133/software/cuda/include/texture_fetch_functions.h"
+	.file	28	"/i3c/hpcl/tzk133/software/cuda/include/math_functions_dbl_ptx3.h"
+
+
+	.entry stencil_3D_order8 (
+		.param .u64 __cudaparm_stencil_3D_order8_g_output,
+		.param .u64 __cudaparm_stencil_3D_order8_g_input,
+		.param .u64 __cudaparm_stencil_3D_order8_g_coeff,
+		.param .s32 __cudaparm_stencil_3D_order8_dimx,
+		.param .s32 __cudaparm_stencil_3D_order8_dimy,
+		.param .s32 __cudaparm_stencil_3D_order8_dimz,
+		.param .f32 __cudaparm_stencil_3D_order8_flag)
+	{
+	.reg .u32 %r<55>;
+	.reg .u64 %rd<60>;
+	.reg .f32 %f<61>;
+	.reg .pred %p<6>;
+	.shared .align 4 .b8 __cuda___cuda_local_var_43756_32_non_const_s_data40[4608];
+	.loc	16	12	0
+$LDWbegin_stencil_3D_order8:
+	.loc	16	31	0
+	mov.u32 	%r1, %ctaid.y;
+	mov.u32 	%r2, %ntid.y;
+	mul.lo.u32 	%r3, %r1, %r2;
+	mov.u32 	%r4, %ctaid.x;
+	mov.u32 	%r5, %ntid.x;
+	mul.lo.u32 	%r6, %r4, %r5;
+	mov.u32 	%r7, %tid.y;
+	add.u32 	%r8, %r3, %r7;
+	mov.u32 	%r9, %tid.x;
+	add.u32 	%r10, %r6, %r9;
+	ld.param.s32 	%r11, [__cudaparm_stencil_3D_order8_dimx];
+	mul.lo.s32 	%r12, %r11, %r8;
+	add.s32 	%r13, %r12, %r10;
+	ld.param.u64 	%rd1, [__cudaparm_stencil_3D_order8_g_input];
+	cvt.s64.s32 	%rd2, %r13;
+	mul.wide.s32 	%rd3, %r13, 4;
+	add.u64 	%rd4, %rd1, %rd3;
+	ld.global.f32 	%f1, [%rd4+0];
+	.loc	16	32	0
+	ld.param.s32 	%r14, [__cudaparm_stencil_3D_order8_dimy];
+	mul.lo.s32 	%r15, %r14, %r11;
+	add.s32 	%r16, %r15, %r13;
+	cvt.s64.s32 	%rd5, %r16;
+	mul.wide.s32 	%rd6, %r16, 4;
+	add.u64 	%rd7, %rd1, %rd6;
+	ld.global.f32 	%f2, [%rd7+0];
+	.loc	16	33	0
+	add.s32 	%r17, %r15, %r16;
+	cvt.s64.s32 	%rd8, %r17;
+	mul.wide.s32 	%rd9, %r17, 4;
+	add.u64 	%rd10, %rd1, %rd9;
+	ld.global.f32 	%f3, [%rd10+0];
+	.loc	16	35	0
+	add.s32 	%r18, %r15, %r17;
+	cvt.s64.s32 	%rd11, %r18;
+	mul.wide.s32 	%rd12, %r18, 4;
+	add.u64 	%rd13, %rd1, %rd12;
+	ld.global.f32 	%f4, [%rd13+0];
+	.loc	16	37	0
+	add.s32 	%r19, %r15, %r18;
+	cvt.s64.s32 	%rd14, %r19;
+	mul.wide.s32 	%rd15, %r19, 4;
+	add.u64 	%rd16, %rd1, %rd15;
+	ld.global.f32 	%f5, [%rd16+0];
+	.loc	16	38	0
+	add.s32 	%r20, %r15, %r19;
+	cvt.s64.s32 	%rd17, %r20;
+	mul.wide.s32 	%rd18, %r20, 4;
+	add.u64 	%rd19, %rd1, %rd18;
+	ld.global.f32 	%f6, [%rd19+0];
+	.loc	16	39	0
+	add.s32 	%r21, %r15, %r20;
+	cvt.s64.s32 	%rd20, %r21;
+	mul.wide.s32 	%rd21, %r21, 4;
+	add.u64 	%rd22, %rd1, %rd21;
+	ld.global.f32 	%f7, [%rd22+0];
+	.loc	16	40	0
+	add.s32 	%r22, %r15, %r21;
+	cvt.s64.s32 	%rd23, %r22;
+	mul.wide.s32 	%rd24, %r22, 4;
+	add.u64 	%rd25, %rd1, %rd24;
+	ld.global.f32 	%f8, [%rd25+0];
+	ld.param.s32 	%r23, [__cudaparm_stencil_3D_order8_dimz];
+	sub.s32 	%r24, %r23, 8;
+	mov.u32 	%r25, 8;
+	setp.le.s32 	%p1, %r24, %r25;
+	@%p1 bra 	$Lt_0_2818;
+	mov.u64 	%rd26, __cuda___cuda_local_var_43756_32_non_const_s_data40;
+	add.s32 	%r26, %r7, 8;
+	add.s32 	%r27, %r9, 8;
+	sub.s32 	%r28, %r23, 16;
+	mov.u32 	%r29, 7;
+	setp.le.u32 	%p2, %r7, %r29;
+	mov.u32 	%r30, 7;
+	setp.le.u32 	%p3, %r9, %r30;
+	cvt.s64.s32 	%rd27, %r9;
+	mul.lo.s32 	%r31, %r15, -8;
+	mul.lo.s32 	%r32, %r15, 8;
+	cvt.s64.s32 	%rd28, %r7;
+	mul.wide.s32 	%rd29, %r7, 48;
+	add.s32 	%r33, %r31, %r32;
+	add.s32 	%r34, %r12, %r9;
+	add.s32 	%r35, %r34, %r6;
+	add.u64 	%rd30, %rd27, %rd29;
+	mul.lo.u64 	%rd31, %rd30, 4;
+	add.u64 	%rd32, %rd26, %rd31;
+	add.s32 	%r36, %r15, %r35;
+	add.s32 	%r37, %r15, %r36;
+	add.s32 	%r38, %r15, %r37;
+	add.s32 	%r39, %r33, %r18;
+	add.s32 	%r40, %r15, %r39;
+	add.s32 	%r41, %r15, %r38;
+	add.s32 	%r42, %r15, %r41;
+	cvt.s64.s32 	%rd33, %r40;
+	mul.wide.s32 	%rd34, %r40, 4;
+	cvt.s64.s32 	%rd35, %r15;
+	mul.wide.s32 	%rd36, %r15, 4;
+	add.s32 	%r43, %r15, %r42;
+	add.s32 	%r44, %r15, %r43;
+	add.s32 	%r45, %r15, %r44;
+	add.s32 	%r46, %r31, %r45;
+	add.s32 	%r47, %r32, %r46;
+	ld.param.u64 	%rd37, [__cudaparm_stencil_3D_order8_g_output];
+	ld.param.u64 	%rd38, [__cudaparm_stencil_3D_order8_g_coeff];
+	mov.s32 	%r48, 8;
+	mov.s32 	%r49, %r28;
+$Lt_0_3330:
+ //<loop> Loop body line 40, nesting depth: 1, estimated iterations: unknown
+	mov.s32 	%r50, %r47;
+	.loc	16	46	0
+	mov.f32 	%f9, %f1;
+	.loc	16	47	0
+	mov.f32 	%f1, %f2;
+	.loc	16	48	0
+	mov.f32 	%f2, %f3;
+	.loc	16	49	0
+	mov.f32 	%f3, %f4;
+	.loc	16	50	0
+	mov.f32 	%f4, %f5;
+	.loc	16	51	0
+	mov.f32 	%f5, %f6;
+	.loc	16	52	0
+	mov.f32 	%f6, %f7;
+	.loc	16	53	0
+	mov.f32 	%f7, %f8;
+	.loc	16	54	0
+	cvt.s64.s32 	%rd39, %r50;
+	mul.wide.s32 	%rd40, %r50, 4;
+	add.u64 	%rd41, %rd1, %rd40;
+	ld.global.f32 	%f8, [%rd41+0];
+	.loc	16	58	0
+	bar.sync 	0;
+	@!%p2 bra 	$Lt_0_3586;
+	.loc	16	65	0
+	mul.lo.s32 	%r51, %r11, 8;
+	cvt.u64.u32 	%rd42, %r7;
+	mul.wide.u32 	%rd43, %r7, 48;
+	add.u64 	%rd44, %rd27, %rd43;
+	mul.lo.u64 	%rd45, %rd44, 4;
+	add.u64 	%rd46, %rd26, %rd45;
+	sub.s32 	%r52, %r40, %r51;
+	cvt.s64.s32 	%rd47, %r52;
+	mul.wide.s32 	%rd48, %r52, 4;
+	add.u64 	%rd49, %rd1, %rd48;
+	ld.global.f32 	%f10, [%rd49+0];
+	st.shared.f32 	[%rd46+32], %f10;
+	.loc	16	66	0
+	add.s32 	%r53, %r51, %r40;
+	cvt.s64.s32 	%rd50, %r53;
+	mul.wide.s32 	%rd51, %r53, 4;
+	add.u64 	%rd52, %rd1, %rd51;
+	ld.global.f32 	%f11, [%rd52+0];
+	st.shared.f32 	[%rd46+3104], %f11;
+$Lt_0_3586:
+	@!%p3 bra 	$Lt_0_4098;
+	.loc	16	71	0
+	cvt.u64.u32 	%rd53, %r9;
+	add.u64 	%rd54, %rd53, %rd29;
+	mul.lo.u64 	%rd55, %rd54, 4;
+	add.u64 	%rd56, %rd26, %rd55;
+	add.u64 	%rd57, %rd34, %rd1;
+	ld.global.f32 	%f12, [%rd57+-32];
+	st.shared.f32 	[%rd56+1536], %f12;
+	.loc	16	72	0
+	ld.global.f32 	%f13, [%rd57+128];
+	st.shared.f32 	[%rd56+1696], %f13;
+$Lt_0_4098:
+	.loc	16	76	0
+	st.shared.f32 	[%rd32+1568], %f4;
+	.loc	16	77	0
+	bar.sync 	0;
+	.loc	16	86	0
+	ld.global.f32 	%f14, [%rd38+0];
+	mul.f32 	%f15, %f14, %f4;
+	ld.global.f32 	%f16, [%rd38+4];
+	ld.shared.f32 	%f17, [%rd32+1572];
+	ld.shared.f32 	%f18, [%rd32+1564];
+	ld.shared.f32 	%f19, [%rd32+1760];
+	ld.shared.f32 	%f20, [%rd32+1376];
+	add.f32 	%f21, %f3, %f5;
+	add.f32 	%f22, %f20, %f21;
+	add.f32 	%f23, %f19, %f22;
+	add.f32 	%f24, %f18, %f23;
+	add.f32 	%f25, %f17, %f24;
+	fma.rn.f32 	%f26, %f16, %f25, %f15;
+	ld.global.f32 	%f27, [%rd38+8];
+	ld.shared.f32 	%f28, [%rd32+1576];
+	ld.shared.f32 	%f29, [%rd32+1560];
+	ld.shared.f32 	%f30, [%rd32+1952];
+	ld.shared.f32 	%f31, [%rd32+1184];
+	add.f32 	%f32, %f2, %f6;
+	add.f32 	%f33, %f31, %f32;
+	add.f32 	%f34, %f30, %f33;
+	add.f32 	%f35, %f29, %f34;
+	add.f32 	%f36, %f28, %f35;
+	fma.rn.f32 	%f37, %f27, %f36, %f26;
+	ld.global.f32 	%f38, [%rd38+12];
+	ld.shared.f32 	%f39, [%rd32+1580];
+	ld.shared.f32 	%f40, [%rd32+1556];
+	ld.shared.f32 	%f41, [%rd32+2144];
+	ld.shared.f32 	%f42, [%rd32+992];
+	add.f32 	%f43, %f1, %f7;
+	add.f32 	%f44, %f42, %f43;
+	add.f32 	%f45, %f41, %f44;
+	add.f32 	%f46, %f40, %f45;
+	add.f32 	%f47, %f39, %f46;
+	fma.rn.f32 	%f48, %f38, %f47, %f37;
+	ld.global.f32 	%f49, [%rd38+16];
+	ld.shared.f32 	%f50, [%rd32+1584];
+	ld.shared.f32 	%f51, [%rd32+1552];
+	ld.shared.f32 	%f52, [%rd32+2336];
+	ld.shared.f32 	%f53, [%rd32+800];
+	add.f32 	%f54, %f8, %f9;
+	add.f32 	%f55, %f53, %f54;
+	add.f32 	%f56, %f52, %f55;
+	add.f32 	%f57, %f51, %f56;
+	add.f32 	%f58, %f50, %f57;
+	fma.rn.f32 	%f59, %f49, %f58, %f48;
+	add.u64 	%rd58, %rd34, %rd37;
+	st.global.f32 	[%rd58+0], %f59;
+	add.s32 	%r48, %r48, 1;
+	add.s32 	%r47, %r15, %r50;
+	add.s32 	%r40, %r15, %r40;
+	add.u64 	%rd34, %rd34, %rd36;
+	setp.ne.s32 	%p4, %r24, %r48;
+	@%p4 bra 	$Lt_0_3330;
+$Lt_0_2818:
+	.loc	16	88	0
+	exit;
+$LDWend_stencil_3D_order8:
+	} // stencil_3D_order8
+

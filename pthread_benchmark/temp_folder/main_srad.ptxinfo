@@ -1,0 +1,24 @@
+ptxas info    : Compiling entry function '_Z8compresslPf' for 'sm_20'
+ptxas info    : Function properties for _Z8compresslPf
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 10 registers, 48 bytes cmem[0], 20 bytes cmem[16]
+ptxas info    : Compiling entry function '_Z5srad2fiilPiS_S_S_PfS0_S0_S0_S0_S0_' for 'sm_20'
+ptxas info    : Function properties for _Z5srad2fiilPiS_S_S_PfS0_S0_S0_S0_S0_
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 19 registers, 136 bytes cmem[0]
+ptxas info    : Compiling entry function '_Z4sradfiilPiS_S_S_PfS0_S0_S0_fS0_S0_' for 'sm_20'
+ptxas info    : Function properties for _Z4sradfiilPiS_S_S_PfS0_S0_S0_fS0_S0_
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 20 registers, 144 bytes cmem[0], 28 bytes cmem[16]
+ptxas info    : Compiling entry function '_Z6reduceliiPfS_' for 'sm_20'
+ptxas info    : Function properties for _Z6reduceliiPfS_
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 14 registers, 4096+0 bytes smem, 64 bytes cmem[0]
+ptxas info    : Compiling entry function '_Z7preparelPfS_S_' for 'sm_20'
+ptxas info    : Function properties for _Z7preparelPfS_S_
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 12 registers, 64 bytes cmem[0]
+ptxas info    : Compiling entry function '_Z7extractlPf' for 'sm_20'
+ptxas info    : Function properties for _Z7extractlPf
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 12 registers, 48 bytes cmem[0], 20 bytes cmem[16]
