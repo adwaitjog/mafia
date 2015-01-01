@@ -7,7 +7,7 @@
 	.visible .func (.param .s32 __cudaretf__Z7maximumiii) _Z7maximumiii (.param .s32 __cudaparmf1__Z7maximumiii, .param .s32 __cudaparmf2__Z7maximumiii, .param .s32 __cudaparmf3__Z7maximumiii)
 
 	//-----------------------------------------------------------
-	// Compiling needle.cpp3.i (/tmp/ccBI#.5gxlKi)
+	// Compiling needle.cpp3.i (/tmp/ccBI#.PomK3H)
 	//-----------------------------------------------------------
 
 	//-----------------------------------------------------------

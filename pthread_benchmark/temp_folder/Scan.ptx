@@ -9,7 +9,7 @@
 	.visible .func (.param .f64 __cudaretf__Z12scanLocalMemIdET_S0_PVS0_) _Z12scanLocalMemIdET_S0_PVS0_ (.param .f64 __cudaparmf1__Z12scanLocalMemIdET_S0_PVS0_, .param .u64 __cudaparmf2__Z12scanLocalMemIdET_S0_PVS0_)
 
 	//-----------------------------------------------------------
-	// Compiling Scan.cpp3.i (/tmp/ccBI#.OFMczk)
+	// Compiling Scan.cpp3.i (/tmp/ccBI#.KqpL3K)
 	//-----------------------------------------------------------
 
 	//-----------------------------------------------------------

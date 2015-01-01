@@ -7,7 +7,7 @@
 	.visible .func _Z9reduceMinIdLi256EEvPT_i (.param .u64 __cudaparmf1__Z9reduceMinIdLi256EEvPT_i, .param .s32 __cudaparmf2__Z9reduceMinIdLi256EEvPT_i)
 
 	//-----------------------------------------------------------
-	// Compiling lulesh.cpp3.i (/tmp/ccBI#.FSZ5NS)
+	// Compiling lulesh.cpp3.i (/tmp/ccBI#.TfUKSn)
 	//-----------------------------------------------------------
 
 	//-----------------------------------------------------------

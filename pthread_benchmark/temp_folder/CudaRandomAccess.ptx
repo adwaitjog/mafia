@@ -7,7 +7,7 @@
 	.visible .func _Z_intrinsic_atom_global_xor_nf_i64 (.param .u64 __cudaparmf1__Z_intrinsic_atom_global_xor_nf_i64, .param .u64 __cudaparmf2__Z_intrinsic_atom_global_xor_nf_i64)
 
 	//-----------------------------------------------------------
-	// Compiling CudaRandomAccess.cpp3.i (/tmp/ccBI#.mT1OH4)
+	// Compiling CudaRandomAccess.cpp3.i (/tmp/ccBI#.Ou0Rqp)
 	//-----------------------------------------------------------
 
 	//-----------------------------------------------------------
