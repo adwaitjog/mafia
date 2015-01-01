@@ -1,0 +1,3 @@
+Benchmarks				Abbr.
+——————————				—————
+Ray Tracing				RAYJPEG Compression			JPEGNeural Network				NNMUMmerGPU				MUMScalar Product				SCPHotspot					HSHistogram				HISTOSeparable Convolution			CONSComputational Fluid Dynamics		CFDBack Propogation			BPBreadth-first Search			BFS2Black-Scholes Pricing			BLKGiga Updates Per Second			GUPS3D Stencil				3DSFast Walsh Convolution			FWTLulesh					LUHReduction				REDNeedle-Wunsch				NWScan					SCANTriad Steam				TRDQuality Threshold Clustering 		QTCLUD decomposation			LUDSum of Absolute Differences 		SADMatrix Multiplication 			MMLaplace 3D Transform			LPSLibor					LIBStreamcluster				SCSpeckle Reducing Anisotropic Diffusion 	SRAD
