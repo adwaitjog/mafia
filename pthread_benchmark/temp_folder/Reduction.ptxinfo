@@ -1,8 +1,0 @@
-ptxas info    : Compiling entry function '_Z6reduceIdLi256EEvPKT_PS0_j' for 'sm_20'
-ptxas info    : Function properties for _Z6reduceIdLi256EEvPKT_PS0_j
-    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
-ptxas info    : Used 14 registers, 52 bytes cmem[0]
-ptxas info    : Compiling entry function '_Z6reduceIfLi256EEvPKT_PS0_j' for 'sm_20'
-ptxas info    : Function properties for _Z6reduceIfLi256EEvPKT_PS0_j
-    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
-ptxas info    : Used 11 registers, 52 bytes cmem[0]

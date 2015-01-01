@@ -1,4 +1,0 @@
-ptxas info    : Compiling entry function '_Z18RandomAccessUpdateyPyS_' for 'sm_20'
-ptxas info    : Function properties for _Z18RandomAccessUpdateyPyS_
-    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
-ptxas info    : Used 13 registers, 56 bytes cmem[0]

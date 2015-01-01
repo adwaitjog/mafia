@@ -1,8 +1,0 @@
-ptxas info    : Compiling entry function '_Z24convolutionColumnsKernelPfS_iii' for 'sm_20'
-ptxas info    : Function properties for _Z24convolutionColumnsKernelPfS_iii
-    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
-ptxas info    : Used 22 registers, 3136+0 bytes smem, 60 bytes cmem[0], 68 bytes cmem[2]
-ptxas info    : Compiling entry function '_Z21convolutionRowsKernelPfS_iii' for 'sm_20'
-ptxas info    : Function properties for _Z21convolutionRowsKernelPfS_iii
-    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
-ptxas info    : Used 18 registers, 1536+0 bytes smem, 60 bytes cmem[0], 68 bytes cmem[2]
