@@ -1,4 +1,0 @@
-ptxas info    : Compiling entry function '_Z6renderPjP4Nodejjff' for 'sm_20'
-ptxas info    : Function properties for _Z6renderPjP4Nodejjff
-    80 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
-ptxas info    : Used 45 registers, 4+0 bytes lmem, 64 bytes cmem[0], 48 bytes cmem[2], 4 bytes cmem[14], 64 bytes cmem[16]

@@ -1,4 +1,0 @@
-ptxas info    : Compiling entry function '_Z12pgain_kerneliilP5PointiPfS1_PiPb' for 'sm_20'
-ptxas info    : Function properties for _Z12pgain_kerneliilP5PointiPfS1_PiPb
-    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
-ptxas info    : Used 12 registers, 96 bytes cmem[0]

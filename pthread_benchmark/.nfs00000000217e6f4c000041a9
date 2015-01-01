@@ -1,8 +1,0 @@
-ptxas info    : Compiling entry function '_Z8spmv_jdsPfPKfPKiS3_S1_S3_i' for 'sm_20'
-ptxas info    : Function properties for _Z8spmv_jdsPfPKfPKiS3_S1_S3_i
-    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
-ptxas info    : Used 22 registers, 84 bytes cmem[0], 40000 bytes cmem[2], 4 bytes cmem[16]
-ptxas info    : Compiling entry function '_Z16spmv_jds_texturePfPKfPKiS3_S1_S3_i' for 'sm_20'
-ptxas info    : Function properties for _Z16spmv_jds_texturePfPKfPKiS3_S1_S3_i
-    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
-ptxas info    : Used 21 registers, 84 bytes cmem[0], 40000 bytes cmem[2], 4 bytes cmem[16]

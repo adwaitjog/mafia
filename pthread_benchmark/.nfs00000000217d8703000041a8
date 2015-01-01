@@ -1,4 +1,0 @@
-ptxas info    : Compiling entry function '_Z5triadPfS_S_f' for 'sm_20'
-ptxas info    : Function properties for _Z5triadPfS_S_f
-    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
-ptxas info    : Used 12 registers, 60 bytes cmem[0]

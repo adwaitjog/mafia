@@ -1,8 +1,0 @@
-ptxas info    : Compiling entry function '_Z20needle_cuda_shared_2PiS_S_iiii' for 'sm_20'
-ptxas info    : Function properties for _Z20needle_cuda_shared_2PiS_S_iiii
-    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
-ptxas info    : Used 47 registers, 2180+0 bytes smem, 72 bytes cmem[0]
-ptxas info    : Compiling entry function '_Z20needle_cuda_shared_1PiS_S_iiii' for 'sm_20'
-ptxas info    : Function properties for _Z20needle_cuda_shared_1PiS_S_iiii
-    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
-ptxas info    : Used 47 registers, 2180+0 bytes smem, 72 bytes cmem[0]

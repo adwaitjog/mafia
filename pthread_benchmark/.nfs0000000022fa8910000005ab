@@ -1,4 +1,0 @@
-ptxas info    : Compiling entry function '_Z9mysgemmNTPKfiS0_iPfiiff' for 'sm_20'
-ptxas info    : Function properties for _Z9mysgemmNTPKfiS0_iPfiiff
-    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
-ptxas info    : Used 41 registers, 512+0 bytes smem, 88 bytes cmem[0]

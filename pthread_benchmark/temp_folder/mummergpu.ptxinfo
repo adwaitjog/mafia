@@ -1,8 +1,0 @@
-ptxas info    : Compiling entry function '_Z17mummergpuRCKernelP10MatchCoordPcPKiS3_ii' for 'sm_20'
-ptxas info    : Function properties for _Z17mummergpuRCKernelP10MatchCoordPcPKiS3_ii
-    24 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
-ptxas info    : Used 18 registers, 72 bytes cmem[0]
-ptxas info    : Compiling entry function '_Z15mummergpuKernelP10MatchCoordPcPKiS3_ii' for 'sm_20'
-ptxas info    : Function properties for _Z15mummergpuKernelP10MatchCoordPcPKiS3_ii
-    24 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
-ptxas info    : Used 26 registers, 72 bytes cmem[0]
