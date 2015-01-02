@@ -107,10 +107,11 @@ Here some examples how to run benchmarks from our framework. BLK stands for Blac
 	./gpgpu_ptx_sim__mergedapps -apps3 BLK SCP HISTO
 
 ==Results==
+
 Our framework generates 3 output file (Stream1.txt, Stream2.txt and Stream3.txt) which represents the maximum number of benchmarks can be executed. Output files can be matched based on the argument order. For instance,
 
-./gpgpu_ptx_sim__mergedapps -apps BLK SCP
+	./gpgpu_ptx_sim__mergedapps -apps BLK SCP
 
-Stream1.txt -> Output for BLK
-Stream2.txt -> Output for SCP
-Stream3.txt -> Empty
+	Stream1.txt -> Output for BLK
+	Stream2.txt -> Output for SCP
+	Stream3.txt -> Empty
