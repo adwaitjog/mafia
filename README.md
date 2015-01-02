@@ -51,29 +51,30 @@ With these commands, the framework is ready to use. To clean the build, you can 
 	-gpu_app : indicates whether 2-application mode enabled or not.
 
 Examples:
-2 application execution with even SM partitioning (15-15)
--gpgpu_n_clusters 30
--gpgpu_sms_app1 15
--gpgpu_mode3 0
--gpu_app 1
 
-2 application execution (12-24)
--gpgpu_n_clusters 36
--gpgpu_sms_app1 12
--gpgpu_mode3 0
--gpu_app 1
-	
-3 application execution(10-10-10)
--gpgpu_n_clusters 30
--gpgpu_sms_app1 15
--gpgpu_mode3 1
--gpu_app 1
+	2 application execution with even SM partitioning (15-15)
+	-gpgpu_n_clusters 30
+	-gpgpu_sms_app1 15
+	-gpgpu_mode3 0
+	-gpu_app 1
 
-single application execution (10)
--gpgpu_n_clusters 30
--gpgpu_sms_app1 10
--gpgpu_mode3 0
--gpu_app 0
+	2 application execution (12-24)
+	-gpgpu_n_clusters 36
+	-gpgpu_sms_app1 12
+	-gpgpu_mode3 0
+	-gpu_app 1
+		
+	3 application execution(10-10-10)
+	-gpgpu_n_clusters 30
+	-gpgpu_sms_app1 15
+	-gpgpu_mode3 1
+	-gpu_app 1
+
+	single application execution (10)
+	-gpgpu_n_clusters 30
+	-gpgpu_sms_app1 10
+	-gpgpu_mode3 0
+	-gpu_app 0
 
 If you modify the number of SMs, make sure you configure the interconnection network parameters in ‘config_fermi_islip.icnt’
 
@@ -93,17 +94,17 @@ Examples:
 
 Here some examples how to run benchmarks from our framework. BLK stands for Blackscholes benchmark, SCP stands for Scalar product benchmark and HISTO stands for Histogram benchmark. 
 
-Single application
-./gpgpu_ptx_sim__mergedapps -sing BLK
+	Single application
+	./gpgpu_ptx_sim__mergedapps -sing BLK
 
-Single application with entire system 
-./gpgpu_ptx_sim__mergedapps -sing0 BLK
+	Single application with entire system 
+	./gpgpu_ptx_sim__mergedapps -sing0 BLK
 
-2-application
-./gpgpu_ptx_sim__mergedapps -apps BLK SCP
+	2-application
+	./gpgpu_ptx_sim__mergedapps -apps BLK SCP
 
-3-application
-./gpgpu_ptx_sim__mergedapps -apps3 BLK SCP HISTO
+	3-application
+	./gpgpu_ptx_sim__mergedapps -apps3 BLK SCP HISTO
 
 ==Results==
 Our framework generates 3 output file (Stream1.txt, Stream2.txt and Stream3.txt) which represents the maximum number of benchmarks can be executed. Output files can be matched based on the argument order. For instance,
