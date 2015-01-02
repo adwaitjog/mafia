@@ -20,12 +20,13 @@ After downloading GPGPU-Sim, make sure you installed all dependencies required. 
 repository : link here.
 2. Build simulator by using the following commands (make sure that you change to bash shell) :
 
-cd v3.x
-source setup_environment
-make
+	cd v3.x
+	source setup_environment
+	make
 
 3. Download benchmarks from MAFIA Github repository. Then, create subdirectory in ‘benchmarks’ folder(e.g. multiapp) and put files in that folder.
 4. Change the directory to the folder you created. To compile and create executable file, the following will work:
+
 	cd multiapp
 	make
 With these commands, the framework is ready to use. To clean the build, you can use ‘make clean’ command.
@@ -37,7 +38,7 @@ With these commands, the framework is ready to use. To clean the build, you can 
 2. Make sure, you have the following three files located in your benchmark folder.
 	gpgpusim.config , gpuwattch_gtx480.xml, config_fermi_islip.icnt
 
-3. Our framework has 4 modes:
+3. Our framework has 4 modes.
 	Single application with entire system : Executes single application by using entire SMs
 	Single application: Executes single application based on number of allocated SMs
 	2-application : Executes 2 application together
