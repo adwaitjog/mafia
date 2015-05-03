@@ -3329,6 +3329,8 @@ unsigned simt_core_cluster::issue_block2core()
         if( m_core[core]->get_not_completed() == 0 ) {
             if( m_core[core]->get_kernel() == NULL ) {
                 kernel_info_t *k = m_gpu->select_kernel();
+                // Adwait: FIXME: this is an inefficient way. Fix select_kernel function to pass m_cluster_id and check
+                // there first with the stream id. 
                 if( k ) { //new
 					//printf("Tuba was here\n");
 					//printf("%d\n",k->get_stream_id());
