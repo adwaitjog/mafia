@@ -6,6 +6,12 @@ benchmark suites(CUDA, Parboil, SHOC and Rodinia).From these benchmarks, you can
 300 2-application workloads and 2300 3-application workloads.It was implemented by extending 
 v3.2 GPGPU-Sim simulator.
 
+If you use or build on this framework, please cite:
+Adwait Jog, Onur Kayiran, Tuba Kesten, Ashutosh Pattnaik, Evgeny Bolotin, Niladrish Chatterjee, 
+Stephen W. Keckler, Mahmut T. Kandemir, Chita R. Das, 
+Anatomy of GPU Memory System for Multi-Application Execution, 
+In the Proceedings of 1st International Symposium on Memory Systems (MEMSYS), Washington, DC, Oct 2015 
+
 
 Setting up Environment 
 ----------------------
