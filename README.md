@@ -25,7 +25,7 @@ After downloading GPGPU-Sim, make sure you installed all dependencies required. 
 ==Modify GPGPU-Sim For MAFIA Framework==
 
 1. Replace src folder in GPGPU-Sim with MAFIA src folder. You can get clone from MAFIA Github
-repository : link here.
+repository.
 2. Build simulator by using the following commands (make sure that you change to bash shell) :
 
 	cd v3.x
