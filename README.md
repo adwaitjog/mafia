@@ -1,4 +1,4 @@
-MAFIA (Multiple Application Framework in GPU Architectures)
+MAFIA (Multiple Application Framework in GPU Architectures) -- Beta Version
 -----------------------------------------------------------
 MAFIA was developed for supporting multiple applications execution on GPUs by HPCL Group
 at The Pennsylvania State University. Currently, it supports 25 benchmarks from various 
