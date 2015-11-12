@@ -1,11 +1,10 @@
 MAFIA (Multiple Application Framework in GPU Architectures)
 -----------------------------------------------------------
-MAFIA was developed for supporting multiple applications execution on GPUs by HPCL Group
-at The Pennsylvania State University. Currently, it supports 25 benchmarks from various 
-benchmark suites(CUDA, Parboil, SHOC and Rodinia).From these benchmarks, you can construct 
-300 2-application workloads and 2300 3-application workloads.It was implemented by extending 
-v3.2 GPGPU-Sim simulator.
-
+MAFIA is developed for supporting multiple applications execution on GPUs by HPCL Group
+at The Pennsylvania State University. It is implemented by extending v3.2 GPGPU-Sim simulator
+from UBC. Currently, it supports 25 benchmarks from various 
+benchmark suites (e.g., CUDA, Parboil, SHOC and Rodinia). From these benchmarks, one can 
+construct 300 2-application workloads and 2300 3-application workloads. 
 
 Setting up Environment 
 ----------------------
@@ -14,15 +13,15 @@ http://www.gpgpu-sim.org/
 
 After downloading GPGPU-Sim, make sure you installed all dependencies required. You can take a look into GPGPU-Sim README file for the detailed information.
 
-==Modify GPGPU-Sim For MAFIA Framework==
+Please use CUDA 4.0 and GCC version less than 4.5 (We used 4.4.6)
 
-1. Please use CUDA 4.0, and GCC version less than 4.5 (We used 4.4.6)
-2. Please pull the latest GPGPU-SIM repo and then replace its corresponding files and folders with 
+==Modify GPGPU-Sim For MAFIA Framework==
+1. Pull the latest GPGPU-Sim repo and then replace its corresponding files and folders with 
 the one in the MAFIA repo. There are some additional folders and files in MAFIA repo. Also, add them to the GPGPUSIM repo.
-3. Change "GCC_VERSION ?=" to the one of yours in common/common_pthread.mk
-4. Do a "make" in the GPGPU-Sim repo after setting appropriate enviornment variables.
-5. Execute ./compile.sh in the pthread_benchmark folder. 
-6. If all above commands are successful, the framework is ready to use. 
+2. Change "GCC_VERSION ?=" to the one of yours in common/common_pthread.mk
+3. Do a "make" in the GPGPU-Sim repo after setting appropriate enviornment variables.
+4. Execute ./compile.sh in the pthread_benchmark folder. 
+5. If all above commands are successful, the framework is ready to use. 
 
 ==Running benchmarks on MAFIA Framework==
 
