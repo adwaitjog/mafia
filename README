@@ -16,19 +16,13 @@ After downloading GPGPU-Sim, make sure you installed all dependencies required. 
 
 ==Modify GPGPU-Sim For MAFIA Framework==
 
-1. Replace src folder in GPGPU-Sim with MAFIA src folder. You can get clone from MAFIA Github
-repository : link here.
-2. Build simulator by using the following commands (make sure that you change to bash shell) :
-
-cd v3.x
-source setup_environment
-make
-
-3. Download benchmarks from MAFIA Github repository. Then, create subdirectory in ‘benchmarks’ folder(e.g. multiapp) and put files in that folder.
-4. Change the directory to the folder you created. To compile and create executable file, the following will work:
-	cd multiapp
-	make
-With these commands, the framework is ready to use. To clean the build, you can use ‘make clean’ command.
+1. Please use CUDA 4.0, and GCC version less than 4.5 (We used 4.4.6)
+2. Please pull the latest GPGPU-SIM repo and then replace its corresponding files and folders with 
+the one in the MAFIA repo. There are some additional folders and files in MAFIA repo. Also, add them to the GPGPUSIM repo.
+3. Change "GCC_VERSION ?=" to the one of yours in common/common_pthread.mk
+4. Do a "make" in the GPGPU-Sim repo after setting appropriate enviornment variables.
+5. Do a "make" in the pthread_benchmark folder. 
+6. If all above commands are successful, the framework is ready to use. 
 
 ==Running benchmarks on MAFIA Framework==
 
