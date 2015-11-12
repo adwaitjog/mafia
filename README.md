@@ -6,6 +6,11 @@ from UBC. Currently, it supports 25 benchmarks from various
 benchmark suites (e.g., CUDA, Parboil, SHOC and Rodinia). From these benchmarks, one can 
 construct 300 2-application workloads and 2300 3-application workloads. 
 
+If you use or build on this framework, please cite:
+Adwait Jog, Onur Kayiran, Tuba Kesten, Ashutosh Pattnaik, Evgeny Bolotin, Niladrish Chatterjee, Stephen W. Keckler, Mahmut T. Kandemir, Chita R. Das, 
+Anatomy of GPU Memory System for Multi-Application Execution, 
+In the Proceedings of 1st International Symposium on Memory Systems (MEMSYS), Washington, DC, Oct 2015 
+
 Setting up Environment 
 ----------------------
 To enable working with MAFIA, first you need to setup GPGPU-Sim. The simulator can be found at
