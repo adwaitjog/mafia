@@ -1,18 +1,10 @@
-MAFIA (Multiple Application Framework in GPU Architectures) -- Beta Version
+MAFIA (Multiple Application Framework in GPU Architectures)
 -----------------------------------------------------------
 MAFIA was developed for supporting multiple applications execution on GPUs by HPCL Group
 at The Pennsylvania State University. Currently, it supports 25 benchmarks from various 
 benchmark suites(CUDA, Parboil, SHOC and Rodinia).From these benchmarks, you can construct 
 300 2-application workloads and 2300 3-application workloads.It was implemented by extending 
 v3.2 GPGPU-Sim simulator.
-
-If you use or build on this framework, please cite:
-
-
-Adwait Jog, Onur Kayiran, Tuba Kesten, Ashutosh Pattnaik, Evgeny Bolotin, Niladrish Chatterjee, 
-Stephen W. Keckler, Mahmut T. Kandemir, Chita R. Das, 
-Anatomy of GPU Memory System for Multi-Application Execution, 
-In the Proceedings of 1st International Symposium on Memory Systems (MEMSYS), Washington, DC, Oct 2015 
 
 
 Setting up Environment 
@@ -24,20 +16,13 @@ After downloading GPGPU-Sim, make sure you installed all dependencies required. 
 
 ==Modify GPGPU-Sim For MAFIA Framework==
 
-1. Replace src folder in GPGPU-Sim with MAFIA src folder. You can get clone from MAFIA Github
-repository.
-2. Build simulator by using the following commands (make sure that you change to bash shell) :
-
-	cd v3.x
-	source setup_environment
-	make
-
-3. Download benchmarks from MAFIA Github repository. Then, create subdirectory in ‘benchmarks’ folder(e.g. multiapp) and put files in that folder.
-4. Change the directory to the folder you created. To compile and create executable file, the following will work:
-
-	cd multiapp
-	make
-With these commands, the framework is ready to use. To clean the build, you can use ‘make clean’ command.
+1. Please use CUDA 4.0, and GCC version less than 4.5 (We used 4.4.6)
+2. Please pull the latest GPGPU-SIM repo and then replace its corresponding files and folders with 
+the one in the MAFIA repo. There are some additional folders and files in MAFIA repo. Also, add them to the GPGPUSIM repo.
+3. Change "GCC_VERSION ?=" to the one of yours in common/common_pthread.mk
+4. Do a "make" in the GPGPU-Sim repo after setting appropriate enviornment variables.
+5. Do a "make" in the pthread_benchmark folder. 
+6. If all above commands are successful, the framework is ready to use. 
 
 ==Running benchmarks on MAFIA Framework==
 
@@ -46,7 +31,7 @@ With these commands, the framework is ready to use. To clean the build, you can 
 2. Make sure, you have the following three files located in your benchmark folder.
 	gpgpusim.config , gpuwattch_gtx480.xml, config_fermi_islip.icnt
 
-3. Our framework has 4 modes.
+3. Our framework has 4 modes:
 	Single application with entire system : Executes single application by using entire SMs
 	Single application: Executes single application based on number of allocated SMs
 	2-application : Executes 2 application together
@@ -60,30 +45,29 @@ With these commands, the framework is ready to use. To clean the build, you can 
 	-gpu_app : indicates whether 2-application mode enabled or not.
 
 Examples:
+2 application execution with even SM partitioning (15-15)
+-gpgpu_n_clusters 30
+-gpgpu_sms_app1 15
+-gpgpu_mode3 0
+-gpu_app 1
 
-	2 application execution with even SM partitioning (15-15)
-	-gpgpu_n_clusters 30
-	-gpgpu_sms_app1 15
-	-gpgpu_mode3 0
-	-gpu_app 1
+2 application execution (12-24)
+-gpgpu_n_clusters 36
+-gpgpu_sms_app1 12
+-gpgpu_mode3 0
+-gpu_app 1
+	
+3 application execution(10-10-10)
+-gpgpu_n_clusters 30
+-gpgpu_sms_app1 15
+-gpgpu_mode3 1
+-gpu_app 1
 
-	2 application execution (12-24)
-	-gpgpu_n_clusters 36
-	-gpgpu_sms_app1 12
-	-gpgpu_mode3 0
-	-gpu_app 1
-		
-	3 application execution(10-10-10)
-	-gpgpu_n_clusters 30
-	-gpgpu_sms_app1 15
-	-gpgpu_mode3 1
-	-gpu_app 1
-
-	single application execution (10)
-	-gpgpu_n_clusters 30
-	-gpgpu_sms_app1 10
-	-gpgpu_mode3 0
-	-gpu_app 0
+single application execution (10)
+-gpgpu_n_clusters 30
+-gpgpu_sms_app1 10
+-gpgpu_mode3 0
+-gpu_app 0
 
 If you modify the number of SMs, make sure you configure the interconnection network parameters in ‘config_fermi_islip.icnt’
 
@@ -103,24 +87,39 @@ Examples:
 
 Here some examples how to run benchmarks from our framework. BLK stands for Blackscholes benchmark, SCP stands for Scalar product benchmark and HISTO stands for Histogram benchmark. 
 
-	Single application
-	./gpgpu_ptx_sim__mergedapps -sing BLK
+Single application
+./gpgpu_ptx_sim__mergedapps -sing BLK
 
-	Single application with entire system 
-	./gpgpu_ptx_sim__mergedapps -sing0 BLK
+Single application with entire system 
+./gpgpu_ptx_sim__mergedapps -sing0 BLK
 
-	2-application
-	./gpgpu_ptx_sim__mergedapps -apps BLK SCP
+2-application
+./gpgpu_ptx_sim__mergedapps -apps BLK SCP
 
-	3-application
-	./gpgpu_ptx_sim__mergedapps -apps3 BLK SCP HISTO
+3-application
+./gpgpu_ptx_sim__mergedapps -apps3 BLK SCP HISTO
 
 ==Results==
-
 Our framework generates 3 output file (Stream1.txt, Stream2.txt and Stream3.txt) which represents the maximum number of benchmarks can be executed. Output files can be matched based on the argument order. For instance,
 
-	./gpgpu_ptx_sim__mergedapps -apps BLK SCP
+./gpgpu_ptx_sim__mergedapps -apps BLK SCP
 
-	Stream1.txt -> Output for BLK
-	Stream2.txt -> Output for SCP
-	Stream3.txt -> Empty
+Stream1.txt -> Output for BLK
+Stream2.txt -> Output for SCP
+Stream3.txt -> Empty
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
