@@ -93,8 +93,8 @@ ifeq ($(shell uname),Linux)
 else
 	CUTIL:=cutil_i386
 endif
-GPGPUSIM_ROOT ?= ../..
 INTERMED_FILES := *.cpp*.i *.cpp*.ii *.cu.c *.cudafe*.* *.fatbin.c *.cu.cpp *.linkinfo *.cpp_o core
+GCC_VERSION ?= gcc-4.4.6
 
 SIM_OBJDIR := 
 SIM_OBJS +=  $(patsubst %.cpp,$(SIM_OBJDIR)%.cpp_o,$(CCFILES))
@@ -103,12 +103,11 @@ SIM_OBJS +=  $(patsubst %.cu,$(SIM_OBJDIR)%.cu_o,$(CUFILES))
 
 .SUFFIXES:
 
-#-L$(GPGPUSIM_ROOT)/build/4000/release/intersim -lintersim
-gpgpu_ptx_sim__$(EXECUTABLE): $(SIM_OBJS) $(GPGPUSIM_ROOT)/build/gcc-4.4.7/cuda-4000/release/cuda-sim/libgpgpu_ptx_sim.a $(GPGPUSIM_ROOT)/build/gcc-4.4.7/cuda-4000/release/libgpgpusim.a 
-	$(CPP) $(CFLAGS) -g $(notdir $(SIM_OBJS)) -L$(GPGPUSIM_ROOT)/lib/gcc-4.4.7/cuda-4000/release -lcudart \
+gpgpu_ptx_sim__$(EXECUTABLE): $(SIM_OBJS) $(GPGPUSIM_ROOT)/build/$(GCC_VERSION)/cuda-4000/release/cuda-sim/libgpgpu_ptx_sim.a $(GPGPUSIM_ROOT)/build/$(GCC_VERSION)/cuda-4000/release/libgpgpusim.a 
+	$(CPP) $(CFLAGS) -g $(notdir $(SIM_OBJS)) -L$(GPGPUSIM_ROOT)/lib/$(GCC_VERSION)/cuda-4000/release -lcudart \
 		-L$(LIBDIR) -l$(CUTIL) \
-		-L$(GPGPUSIM_ROOT)/build/gcc-4.4.7/cuda-4000/release -lgpgpusim \
-		-L$(GPGPUSIM_ROOT)/build/gcc-4.4.7/cuda-4000/release/cuda-sim/ -lgpgpu_ptx_sim \
+		-L$(GPGPUSIM_ROOT)/build/$(GCC_VERSION)/cuda-4000/release -lgpgpusim \
+		-L$(GPGPUSIM_ROOT)/build/$(GCC_VERSION)/cuda-4000/release/cuda-sim/ -lgpgpu_ptx_sim \
 		$(NEWLIBDIR) $(LIB) -o gpgpu_ptx_sim__$(EXECUTABLE)
 	rm -rf $(INTERMED_FILES) *.cubin cubin.bin *_o *.hash $(EXECUTABLE)
 
