@@ -33,6 +33,6 @@ int main_cfd(cudaStream_t stream_app, pthread_mutex_t *mutexapp, bool flag);
 int main_scan(cudaStream_t stream_app, pthread_mutex_t *mutexapp, bool flag);
 int main_TRD(cudaStream_t stream_app, pthread_mutex_t *mutexapp, bool flag);
 int main_spmv(cudaStream_t stream_app, pthread_mutex_t *mutexapp, bool flag);
-int main_MUM(cudaStream_t stream_app, pthread_mutex_t *mutexapp, bool flag);
+//int main_MUM(cudaStream_t stream_app, pthread_mutex_t *mutexapp, bool flag);
 int main_lulesh(cudaStream_t stream_app, pthread_mutex_t *mutexapp, bool flag);
 

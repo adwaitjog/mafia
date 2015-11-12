@@ -69,8 +69,8 @@ void callApp(char *app_name,cudaStream_t stream_app, pthread_mutex_t *mutexapp, 
 		main_BP(stream_app, mutexapp, flag);
 	else if(strcmp(app_name,"FFT") ==0)
 		main_fft(stream_app, mutexapp, flag);
-	else if(strcmp(app_name,"MUM") ==0)
-		main_MUM(stream_app, mutexapp, flag);
+	//else if(strcmp(app_name,"MUM") ==0)
+		//main_MUM(stream_app, mutexapp, flag);
 	else if(strcmp(app_name,"LUH") ==0)
 		main_lulesh(stream_app, mutexapp, flag);
 	else if(strcmp(app_name,"RED") ==0)
