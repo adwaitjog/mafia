@@ -21,7 +21,7 @@ After downloading GPGPU-Sim, make sure you installed all dependencies required. 
 the one in the MAFIA repo. There are some additional folders and files in MAFIA repo. Also, add them to the GPGPUSIM repo.
 3. Change "GCC_VERSION ?=" to the one of yours in common/common_pthread.mk
 4. Do a "make" in the GPGPU-Sim repo after setting appropriate enviornment variables.
-5. Do a "make" in the pthread_benchmark folder. 
+5. Execute ./compile.sh in the pthread_benchmark folder. 
 6. If all above commands are successful, the framework is ready to use. 
 
 ==Running benchmarks on MAFIA Framework==
