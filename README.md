@@ -16,11 +16,16 @@ After downloading GPGPU-Sim, make sure you installed all dependencies required. 
 Please use CUDA 4.0 and GCC version less than 4.5 (We used 4.4.6)
 
 ==Modify GPGPU-Sim For MAFIA Framework==
+
 1. Pull the latest GPGPU-Sim repo and then replace its corresponding files and folders with 
 the one in the MAFIA repo. There are some additional folders and files in MAFIA repo. Also, add them to the GPGPUSIM repo.
+
 2. Change "GCC_VERSION ?=" to the one of yours in common/common_pthread.mk
+
 3. Do a "make" in the GPGPU-Sim repo after setting appropriate enviornment variables.
+
 4. Execute ./compile.sh in the pthread_benchmark folder. 
+
 5. If all above commands are successful, the framework is ready to use. 
 
 ==Running benchmarks on MAFIA Framework==
