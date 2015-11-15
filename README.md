@@ -19,7 +19,7 @@ Basics of MAFIA
 You need to first setup GPGPU-Sim before starting to play MAFIA :-). GPGPU-Sim can be found at
 http://www.gpgpu-sim.org/. Please use CUDA 4.0 and GCC version less than 4.5 (we used 4.4.6).
 
-Setting-up MAFIA
+How to set-up MAFIA?
 -----------------------------------------------------------
 
 1. Pull the latest GPGPU-Sim repo and then replace its corresponding files and folders with 
@@ -33,7 +33,7 @@ the one in the MAFIA repo. There are some additional folders and files in MAFIA 
 
 5. If all above commands are successful, the framework is ready to use. 
 
-Running MAFIA
+How to play MAFIA?
 -----------------------------------------------------------
 
 1. You can see the available benchmarks in MAFIABENCHMARKS file.
@@ -126,7 +126,10 @@ Single application with entire system
 
 	./gpgpu_ptx_sim__mergedapps -apps3 BLK SCP HISTO
 
-==Results==
+
+Where to find MAFIA results?
+-----------------------------------------------------------
+
 Our framework generates 3 output file (Stream1.txt, Stream2.txt and Stream3.txt) which represents the maximum number of benchmarks can be executed. Output files can be matched based on the argument order. For instance,
 
 ./gpgpu_ptx_sim__mergedapps -apps BLK SCP
