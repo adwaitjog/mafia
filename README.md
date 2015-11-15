@@ -1,5 +1,6 @@
 MAFIA: Multiple Application Framework for GPU Architectures
 -----------------------------------------------------------
+
 MAFIA is developed for supporting multiple applications execution on GPUs. This
 framework is implemented by extending v3.2 GPGPU-Sim simulator from UBC. Currently, 
 it supports 25 benchmarks from various benchmark suites (e.g., CUDA, Parboil, SHOC and Rodinia). 
@@ -12,12 +13,14 @@ Adwait Jog, Onur Kayiran, Tuba Kesten, Ashutosh Pattnaik, Evgeny Bolotin, Niladr
 Mahmut T. Kandemir, Chita R. Das, Anatomy of GPU Memory System for Multi-Application Execution, 
 In the Proceedings of 1st International Symposium on Memory Systems (MEMSYS), Washington, DC, Oct 2015 
 
-==Basics of MAFIA==
+Basics of MAFIA
+-----------------------------------------------------------
 
 You need to first setup GPGPU-Sim before starting to play MAFIA :-). GPGPU-Sim can be found at
 http://www.gpgpu-sim.org/. Please use CUDA 4.0 and GCC version less than 4.5 (we used 4.4.6).
 
-==Setting-up MAFIA==
+Setting-up MAFIA
+-----------------------------------------------------------
 
 1. Pull the latest GPGPU-Sim repo and then replace its corresponding files and folders with 
 the one in the MAFIA repo. There are some additional folders and files in MAFIA repo. Also, add them to the GPGPUSIM repo.
@@ -30,7 +33,8 @@ the one in the MAFIA repo. There are some additional folders and files in MAFIA 
 
 5. If all above commands are successful, the framework is ready to use. 
 
-==Running MAFIA==
+Running MAFIA
+-----------------------------------------------------------
 
 1. You can see the available benchmarks in MAFIABENCHMARKS file.
 
@@ -100,16 +104,20 @@ Examples:
 Here some examples how to run benchmarks from our framework. BLK stands for Blackscholes benchmark, SCP stands for Scalar product benchmark and HISTO stands for Histogram benchmark. 
 
 Single application
-./gpgpu_ptx_sim__mergedapps -sing BLK
+
+	./gpgpu_ptx_sim__mergedapps -sing BLK
 
 Single application with entire system 
-./gpgpu_ptx_sim__mergedapps -sing0 BLK
+
+	./gpgpu_ptx_sim__mergedapps -sing0 BLK
 
 2-application
-./gpgpu_ptx_sim__mergedapps -apps BLK SCP
+
+	./gpgpu_ptx_sim__mergedapps -apps BLK SCP
 
 3-application
-./gpgpu_ptx_sim__mergedapps -apps3 BLK SCP HISTO
+
+	./gpgpu_ptx_sim__mergedapps -apps3 BLK SCP HISTO
 
 ==Results==
 Our framework generates 3 output file (Stream1.txt, Stream2.txt and Stream3.txt) which represents the maximum number of benchmarks can be executed. Output files can be matched based on the argument order. For instance,
@@ -119,6 +127,8 @@ Our framework generates 3 output file (Stream1.txt, Stream2.txt and Stream3.txt)
 Stream1.txt -> Output for BLK
 Stream2.txt -> Output for SCP
 Stream3.txt -> Empty
+
+Note: In single application mode, you should use the console output of MAFIA. You can re-direct the console output to a file. 
 
 
 
