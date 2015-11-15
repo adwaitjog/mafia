@@ -1,10 +1,10 @@
 MAFIA (Multiple Application Framework in GPU Architectures)
 -----------------------------------------------------------
-MAFIA is developed for supporting multiple applications execution on GPUs by HPCL Group
-at The Pennsylvania State University. It is implemented by extending v3.2 GPGPU-Sim simulator
-from UBC. Currently, it supports 25 benchmarks from various 
-benchmark suites (e.g., CUDA, Parboil, SHOC and Rodinia). From these benchmarks, one can 
-construct 300 2-application workloads and 2300 3-application workloads. 
+MAFIA is developed for supporting multiple applications execution on GPUs. This
+framework is implemented by extending v3.2 GPGPU-Sim simulator from UBC. Currently, 
+it supports 25 benchmarks from various benchmark suites (e.g., CUDA, Parboil, SHOC and Rodinia). 
+From these benchmarks, one can construct 300 2-application workloads and 2300 3-application 
+workloads. 
 
 If you use or build on this framework, please cite:
 Adwait Jog, Onur Kayiran, Tuba Kesten, Ashutosh Pattnaik, Evgeny Bolotin, Niladrish Chatterjee, Stephen W. Keckler, Mahmut T. Kandemir, Chita R. Das, 
@@ -41,6 +41,7 @@ the one in the MAFIA repo. There are some additional folders and files in MAFIA 
 	gpgpusim.config , gpuwattch_gtx480.xml, config_fermi_islip.icnt
 
 3. Our framework has 4 modes:
+	
 	Single application with entire system : Executes single application by using entire SMs
 	Single application: Executes single application based on number of allocated SMs
 	2-application : Executes 2 application together
@@ -78,7 +79,7 @@ single application execution (10)
 -gpgpu_mode3 0
 -gpu_app 0
 
-If you modify the number of SMs, make sure you configure the interconnection network parameters in ‘config_fermi_islip.icnt’
+If you modify the number of SMs, make sure you configure the interconnection network parameters accordingly in ‘config_fermi_islip.icnt’
 
 5. After compilation, the executable file called ‘gpgpu_ptx_sim__mergedapps’ will be generated. To run, the following command will work:
 	./gpgpu_ptx_sim__mergedapps <mode_name> <appnames>
