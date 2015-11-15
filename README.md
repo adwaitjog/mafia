@@ -38,21 +38,28 @@ Running MAFIA
 
 1. You can see the available benchmarks in MAFIABENCHMARKS file.
 
-2. Make sure, you have the following three files located in your benchmark folder.
+2. Make sure you have the following three files located in your benchmark folder.
+ 
 	gpgpusim.config , gpuwattch_gtx480.xml, config_fermi_islip.icnt
 
 3. Our framework has 4 modes:
 
 	Single application with entire system : Executes single application by using entire SMs
+
 	Single application: Executes single application based on number of allocated SMs
+
 	2-application : Executes 2 application together
+
 	3-application : Executes 3 application together
 
-4. To run framework with one these modes, modify some parameters in gpgpusim.config.
-	
+4. To run framework with one these modes, modify/add gpgpusim.config.
+
 	-gpgpu_n_clusters : indicates the number of SMs in the system.For 3-application mode, make sure that you choose a SMs number divisible by 3.
+
 	-gpgpu_sms_app1 : indicates the number of SMs assigned to first application.
+
 	-gpgpu_mode3 : indicates whether 3-application mode enabled or not.
+
 	-gpu_app : indicates whether 2-application mode enabled or not.
 
 Examples:
