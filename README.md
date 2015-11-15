@@ -1,4 +1,4 @@
-MAFIA (Multiple Application Framework in GPU Architectures)
+MAFIA: Multiple Application Framework for GPU Architectures
 -----------------------------------------------------------
 MAFIA is developed for supporting multiple applications execution on GPUs. This
 framework is implemented by extending v3.2 GPGPU-Sim simulator from UBC. Currently, 
