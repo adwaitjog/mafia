@@ -1,0 +1,11 @@
+#!/bin/bash
+#PBS -l nodes=1:rhel6:compute:ppn=1
+#PBS -l walltime=24:00:00
+#PBS -N mm
+#PBS -m a
+#PBS -M adwaitjog@gmail.com
+PROG=$applications/bash-scripts/run_scripts/parboil/mainscript_mm
+ARGS=""
+cd $PBS_O_WORKDIR
+$PROG $ARGS
+exit 0
