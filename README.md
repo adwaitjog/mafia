@@ -22,8 +22,7 @@ http://www.gpgpu-sim.org/. Please use CUDA 4.0 and GCC version less than 4.5 (we
 How to set-up MAFIA?
 -----------------------------------------------------------
 
-1. Pull the latest GPGPU-Sim repo and then replace its corresponding files and folders with 
-the one in the MAFIA repo. There are some additional folders and files in MAFIA repo. Also, add them to the GPGPUSIM repo.
+1. Pull the repo to your favorite folder
 
 2. Change "GCC_VERSION ?=" to the one of yours in common/common_pthread.mk
 
