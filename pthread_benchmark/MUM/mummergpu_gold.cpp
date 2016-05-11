@@ -2,7 +2,7 @@
 #include <string.h>
 
 #include <fstream>
-typedef unsigned long uint32_t;
+//typedef unsigned long uint32_t;
 #define ulong4 uint32_t
 #include "mummergpu.h"
 

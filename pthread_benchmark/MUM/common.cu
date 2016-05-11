@@ -1,8 +1,10 @@
 #ifndef COMMON_CU__
 #define COMMON_CU__ 1
 
-typedef unsigned long uint32_t;
+//typedef unsigned long uint32_t;
 // Children are labeled as ACGT$
+//#include <stdint.h>
+#include<vector_types.h>
 const int basecount = 5;
 
 // Note: max pixel size is 16 bytes
