@@ -1810,7 +1810,7 @@ void gpgpu_sim::cycle()
 				   output = freopen("stream1.txt", "w+", file1);
 			   else if(!stat_flag_APP2)
 				   output = freopen("stream2.txt", "w+", file2);
-			   else if (!stat_flag_APP3)
+			   else 
 				   output = freopen("stream3.txt", "w+", file3);
 		   
 			   fprintf(output, "statistics when ALL apps completed MAX instructions\n");
