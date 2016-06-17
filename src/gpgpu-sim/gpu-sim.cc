@@ -1799,19 +1799,27 @@ void gpgpu_sim::cycle()
 		   //int f1= feof(file1);
 		   //int f2= feof(file2);
 		   //int f3= feof(file3);
-		   if(!stat_flag_APP1)
-			   output = freopen("stream1.txt", "w+", file1);
-		   else if(!stat_flag_APP2)
-			   output = freopen("stream2.txt", "w+", file2);
-		   else if (!stat_flag_APP3)
-			   output = freopen("stream3.txt", "w+", file3);
 		   
-		   fprintf(output, "statistics when ALL apps completed MAX instructions\n");
-		   fprintf(output, "-------------------------------------------------\n");
-		   gpu_print_stat_file(output);
-		   fflush(output);
+		   int new_file = 0;
+		   if ((!stat_flag_APP1) || (!stat_flag_APP2) || (!stat_flag_APP3)) {
+			new_file = 1;
+		   }
+			
+		   if (new_file == 1) {
+			   if(!stat_flag_APP1)
+				   output = freopen("stream1.txt", "w+", file1);
+			   else if(!stat_flag_APP2)
+				   output = freopen("stream2.txt", "w+", file2);
+			   else if (!stat_flag_APP3)
+				   output = freopen("stream3.txt", "w+", file3);
 		   
-		   fclose(output);
+			   fprintf(output, "statistics when ALL apps completed MAX instructions\n");
+			   fprintf(output, "-------------------------------------------------\n");
+			   gpu_print_stat_file(output);
+		   	   fflush(output);
+			   fclose(output);
+		   }
+		   
 		   abort();
 	   }
    }
