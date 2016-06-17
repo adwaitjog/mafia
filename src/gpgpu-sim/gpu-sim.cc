@@ -1800,7 +1800,7 @@ void gpgpu_sim::cycle()
 		   //int f2= feof(file2);
 		   //int f3= feof(file3);
 		   
-		   int new_file = 0;
+		   /*int new_file = 0;
 		   if ((!stat_flag_APP1) || (!stat_flag_APP2) || (!stat_flag_APP3)) {
 			new_file = 1;
 		   }
@@ -1818,7 +1818,7 @@ void gpgpu_sim::cycle()
 			   gpu_print_stat_file(output);
 		   	   fflush(output);
 			   fclose(output);
-		   }
+		   }*/
 		   
 		   abort();
 	   }
