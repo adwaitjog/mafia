@@ -292,21 +292,21 @@ void stream_operation::do_operation( gpgpu_sim *gpu )
 					stat_flag_1 = true;
 					gpu->app_cache_flush(1);
 					printf( "Flushing Caches -- 1\n");
-					output = freopen("stream1.txt", "w+", file1);
+					output = freopen("stream1.txt", "a", file1);
 				}
            
 				if (m_stream->get_uid() == 2) {
 					stat_flag_2 = true;
 					gpu->app_cache_flush(2);
 					printf( "Flushing Caches -- 2\n");
-					output = freopen("stream2.txt", "w+", file2);
+					output = freopen("stream2.txt", "a", file2);
 				}
            
 				if (m_stream->get_uid() == 3) {
 					stat_flag_3 = true;
 					gpu->app_cache_flush(3);
 					printf( "Flushing Caches -- 3\n");
-					output = freopen("stream3.txt", "w+", file3);
+					output = freopen("stream3.txt", "a", file3);
 				}
            
 				fprintf(output, "statistics from finished app %u\n", m_stream->get_uid());
@@ -319,12 +319,12 @@ void stream_operation::do_operation( gpgpu_sim *gpu )
 			}
 			else {
 				if (m_stream->get_uid() == 1) {
-					output = freopen("stream1.txt", "w+", file1);
+					output = freopen("stream1.txt", "a", file1);
                
 				}else if(m_stream->get_uid() == 2){
-					output = freopen("stream2.txt", "w+", file2);
+					output = freopen("stream2.txt", "a", file2);
 				}else
-					output = freopen("stream3.txt", "w+", file3);
+					output = freopen("stream3.txt", "a", file3);
                
 				fprintf(output, "statistics when all apps are finished %u\n", m_stream->get_uid());
 				fprintf(output, "-------------------------------------------------\n");

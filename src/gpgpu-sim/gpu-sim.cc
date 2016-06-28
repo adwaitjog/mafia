@@ -1721,7 +1721,7 @@ void gpgpu_sim::cycle()
 	   if (((gpu_mode3 && stat_flag_3) || (!gpu_mode3)) && (gpu_sim_insn_1 >= m_config.gpu_max_insn_opt) && stat_flag_2) {
 		   max_insn_struck = true;
 		   print_stats();
-		   output = freopen("stream1.txt", "w+", file1);
+		   output = freopen("stream1.txt", "a", file1);
 		   fprintf(output, "statistics when APP-1 (MAX) and APP-2(n-1) and APP-3 (n-1)  1\n");
 		   fprintf(output, "-------------------------------------------------\n");
 		   gpu_print_stat_file(output);
@@ -1734,7 +1734,7 @@ void gpgpu_sim::cycle()
 	   if (((gpu_mode3 && stat_flag_3) || (!gpu_mode3)) && (gpu_sim_insn_2 >= m_config.gpu_max_insn_opt) && stat_flag_1 ) {
 		   max_insn_struck = true;
 		   print_stats();
-		   output = freopen("stream2.txt", "w+", file2);
+		   output = freopen("stream2.txt", "a", file2);
 		   fprintf(output, "statistics when APP-1 (n-1) and APP-2(MAX) and APP-3 (n-1) 2\n");
 		   fprintf(output, "-------------------------------------------------\n");
 		   gpu_print_stat_file(output);
@@ -1747,7 +1747,7 @@ void gpgpu_sim::cycle()
 	   if (gpu_mode3 && (gpu_sim_insn_3 >= m_config.gpu_max_insn_opt) && stat_flag_1 && stat_flag_2) {
 		   max_insn_struck = true;
 		   print_stats();
-		   output = freopen("stream3.txt", "w+", file3);
+		   output = freopen("stream3.txt", "a", file3);
 		   fprintf(output, "statistics when APP-1 (n-1) and APP-2(n-1) and APP-3 (MAX)  2\n");
 		   fprintf(output, "-------------------------------------------------\n");
 		   gpu_print_stat_file(output);
@@ -1762,7 +1762,7 @@ void gpgpu_sim::cycle()
 			   if ((gpu_sim_insn_1 >= m_config.gpu_max_insn_opt)) {
 				   if (gpu_sim_insn_2 != 0) {
 					   stat_flag_APP1 = true;
-					   output = freopen("stream1.txt", "w+", file1);
+					   output = freopen("stream1.txt", "a", file1);
 					   fprintf(output, "statistics when APP-1 completed MAX instructions 1\n");
 					   fprintf(output, "-------------------------------------------------\n");
 					   gpu_print_stat_file(output);
@@ -1772,7 +1772,7 @@ void gpgpu_sim::cycle()
 			}
 			if(!stat_flag_APP2 && !stat_flag_2) {
 			   if((gpu_sim_insn_2 >= m_config.gpu_max_insn_opt))  {
-				   output = freopen("stream2.txt", "w+", file2);
+				   output = freopen("stream2.txt", "a", file2);
 				   stat_flag_APP2 = true;
 				   fprintf(output, "statistics when APP-2 completed MAX instructions 2\n");
 				   fprintf(output, "-------------------------------------------------\n");
@@ -1782,7 +1782,7 @@ void gpgpu_sim::cycle()
 			}
 			if(gpu_mode3 && !stat_flag_APP3 && !stat_flag_3) {
 				if((gpu_sim_insn_3 >= m_config.gpu_max_insn_opt))  {
-				   output = freopen("stream3.txt", "w+", file3);
+				   output = freopen("stream3.txt", "a", file3);
 				   stat_flag_APP3 = true;
 				   fprintf(output, "statistics when APP-3 completed MAX instructions 3\n");
 				   fprintf(output, "-------------------------------------------------\n");
@@ -1807,11 +1807,11 @@ void gpgpu_sim::cycle()
 			
 		   if (new_file == 1) {
 			   if(!stat_flag_APP1)
-				   output = freopen("stream1.txt", "w+", file1);
+				   output = freopen("stream1.txt", "a", file1);
 			   else if(!stat_flag_APP2)
-				   output = freopen("stream2.txt", "w+", file2);
+				   output = freopen("stream2.txt", "a", file2);
 			   else 
-				   output = freopen("stream3.txt", "w+", file3);
+				   output = freopen("stream3.txt", "a", file3);
 		   
 			   fprintf(output, "statistics when ALL apps completed MAX instructions\n");
 			   fprintf(output, "-------------------------------------------------\n");
