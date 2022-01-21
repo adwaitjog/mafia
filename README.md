@@ -1,8 +1,10 @@
-MAFIA: Multiple Application Framework for GPU Architectures
+MAFIA: Multiple Application Framework for GPUs
 -----------------------------------------------------------
 
+Note: This framework currently does not support newer versions of GPGPU-Sim. 
+
 MAFIA is developed for supporting multiple applications execution on GPUs. This
-framework is implemented by extending v3.2 GPGPU-Sim simulator from UBC. Currently, 
+framework is developed by extending v3.2 GPGPU-Sim simulator from UBC. Currently, 
 it supports 25 benchmarks from various benchmark suites (e.g., CUDA, Parboil, SHOC and Rodinia). 
 From these benchmarks, one can construct 300 2-application workloads and 2300 3-application 
 workloads. 
@@ -16,8 +18,9 @@ In the Proceedings of 1st International Symposium on Memory Systems (MEMSYS), Wa
 Basics of MAFIA
 -----------------------------------------------------------
 
-You need to first setup GPGPU-Sim before starting to play MAFIA :-). GPGPU-Sim can be found at
+You need to first setup GPGPU-Sim. GPGPU-Sim can be found at
 http://www.gpgpu-sim.org/. Please use CUDA 4.0 and GCC version less than 4.5 (we used 4.4.6).
+This framework currently does not support newer versions of GPGPU-Sim. 
 
 How to set-up MAFIA?
 -----------------------------------------------------------
